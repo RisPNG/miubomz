@@ -1,5 +1,5 @@
 # Miubomz
-Miubomz (MiuOS) is an opinionated, out-of-the-box GNU/Linux experience focused on usability and Windows-like familiarity. It is built using only the official packages provided by the distributions it is based on.
+Miubomz OS (MiuOS) is an opinionated, out-of-the-box GNU/Linux experience focused on usability and Windows-like familiarity. It is built using only the official packages provided by the distributions it is based on.
 
 ## Miubian, not your typical Debian-based distribution
 Miubomz does not try to turn Debian into something that pretends to be its own distribution.
