@@ -12,6 +12,9 @@ A Miubomz installation is still a legitimate Debian installation. It uses Debian
 ### Your machine should stay yours
 Miubomz is simply an opinionated Debian. Miubomz should remain realistic about what it is capable of maintaining. The system should remain maintainable even if Miu ecosystem disappears, supported by the larger communities, repositories, packages, and development work of Debian and GNOME.
 
+## Why "Miubomz"?
+I was inspired by one of the charactes in Scott Pilgrim media, Nega Scott. So this project is like Nega Windows but that's too on the nose, so what if I flip their letters on their x-axis or y-axis? Miubomz!
+
 ## What's next? Miubuntu? Miurch? Miudora?
 Unlikely, but I wouldn't leave those _windows_ closed (haha, get it? jk). I am primarily a hardcore Debian user, it is what my homeserver runs, it is what my main machine runs. Maybe if I have friends (eventually) that I can trust that uses Fedora or Arch, I will then consider this possibility but until then, please don't stress me on these.
 
