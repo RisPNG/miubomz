@@ -1,0 +1,7 @@
+[tasks.build]
+description = "Build Miubomz 0.1.0 using native Debian live-build"
+run = "bash scripts/build.sh"
+
+[tasks.clean]
+description = "Clean generated live-build state while preserving downloads and release artifacts"
+run = "bash scripts/clean.sh"

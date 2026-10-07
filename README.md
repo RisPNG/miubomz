@@ -12,6 +12,21 @@ A Miubomz installation is still a legitimate Debian installation. It uses Debian
 ### Your machine should stay yours
 Miubomz is simply an opinionated Debian. Miubomz should remain realistic about what it is capable of maintaining. The system should remain maintainable even if Miu ecosystem disappears, supported by the larger communities, repositories, packages, and development work of Debian and GNOME.
 
+## Miubian features
+
+- Debian Testing with GNOME, Debian's identity, and its normal package update path.
+- A familiar desktop with an application menu, taskbar, system tray, desktop icons, and Windows-style keyboard shortcuts.
+- Fluent themes, icons, and cursors, with a dark appearance configured by default.
+- Preinstalled browsers, office software, media players, image viewers, and everyday desktop utilities.
+- Flatpak applications and their runtimes supplied for offline use, plus Gear Lever for managing AppImages.
+- Development tools including Visual Studio Code, mise, easyvenv, and supplied Python, Node.js, Java, Go, and Rust toolchains.
+- An enhanced Bash terminal with ble.sh, Starship, and command history synchronized between terminals.
+- A live GNOME desktop and graphical Calamares installer supporting offline BIOS and UEFI installation.
+- Automatic Btrfs partitioning with Zstd compression and separate subvolumes for home, logs, caches, and temporary files; manual partitioning remains available.
+- Scheduled Timeshift system snapshots and automatic snapshots before APT package transactions.
+- GRUB snapshot previews and permanent restoration through Timeshift, with home excluded from system rollback.
+- Compressed RAM swap through zram, with no disk swap created by automatic partitioning.
+
 ## Why "Miubomz"?
 I was inspired by one of the characters in Scott Pilgrim media, Nega Scott. So this project is like Nega Windows but that's too on the nose, so what if I flip their letters on their x-axis or y-axis? Miubomz!
 

@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+
+export MKSQUASHFS_OPTIONS="-no-duplicates -processors ${MIUBOMZ_BUILD_JOBS:-4} -mem ${MIUBOMZ_SQUASHFS_MEMORY:-1G} ${MKSQUASHFS_OPTIONS:-}"
+lb build noauto "$@"

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "roots": {
+    "bookmark_bar": {
+      "children": [],
+      "date_added": "0",
+      "date_last_used": "0",
+      "date_modified": "0",
+      "id": "1",
+      "name": "Bookmarks",
+      "type": "folder"
+    },
+    "other": {
+      "children": [],
+      "date_added": "0",
+      "date_last_used": "0",
+      "date_modified": "0",
+      "id": "2",
+      "name": "Other bookmarks",
+      "type": "folder"
+    },
+    "synced": {
+      "children": [],
+      "date_added": "0",
+      "date_last_used": "0",
+      "date_modified": "0",
+      "id": "3",
+      "name": "Mobile bookmarks",
+      "type": "folder"
+    }
+  }
+}

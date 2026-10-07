@@ -1,0 +1,403 @@
+{
+  "version": "0.1.0",
+  "reference_snapshot": "Desired Results",
+  "origins": [
+    {
+      "source": "home/miubomz/.themes",
+      "destination": "usr/share/themes"
+    },
+    {
+      "source": "home/miubomz/.local/share/icons",
+      "destination": "usr/share/icons"
+    },
+    {
+      "source": "home/miubomz/.icons/fluent",
+      "destination": "usr/share/icons/fluent"
+    },
+    {
+      "source": "home/miubomz/.icons/fluent-dark",
+      "destination": "usr/share/icons/fluent-dark"
+    },
+    {
+      "source": "home/miubomz/.local/share/gnome-shell/extensions",
+      "destination": "etc/skel/.local/share/gnome-shell/extensions"
+    },
+    {
+      "source": "home/miubomz/.local/share/blesh",
+      "destination": "usr/share/blesh"
+    },
+    {
+      "source": "home/miubomz/.local/bin/mise",
+      "destination": "usr/bin/mise"
+    },
+    {
+      "source": "home/miubomz/.local/bin/easyvenv",
+      "destination": "usr/bin/easyvenv"
+    },
+    {
+      "source": "home/miubomz/.local/bin/venv",
+      "destination": "usr/bin/venv"
+    },
+    {
+      "source": "usr/local/bin/starship",
+      "destination": "usr/bin/starship"
+    },
+    {
+      "source": "usr/bin/pacstall",
+      "destination": "usr/bin/pacstall"
+    },
+    {
+      "source": "usr/share/pacstall",
+      "destination": "usr/share/pacstall"
+    },
+    {
+      "source": "home/linuxbrew/.linuxbrew",
+      "destination": "home/linuxbrew/.linuxbrew"
+    },
+    {
+      "source": "home/miubomz/.local/share/mise/installs",
+      "destination": "etc/skel/.local/share/mise/installs"
+    },
+    {
+      "source": "home/miubomz/.cargo/bin",
+      "destination": "etc/skel/.cargo/bin"
+    },
+    {
+      "source": "home/miubomz/.rustup/toolchains",
+      "destination": "etc/skel/.rustup/toolchains"
+    },
+    {
+      "source": "home/miubomz/.rustup/settings.toml",
+      "destination": "etc/skel/.rustup/settings.toml"
+    },
+    {
+      "source": "home/miubomz/AppImages/qview.appimage",
+      "destination": "etc/skel/AppImages/qview.appimage"
+    },
+    {
+      "source": "var/lib/pacstall/metadata/fetch-git",
+      "destination": "var/lib/pacstall/metadata/fetch-git"
+    },
+    {
+      "source": "home/miubomz/.config/mpv/scripts",
+      "destination": "etc/skel/.config/mpv/scripts"
+    },
+    {
+      "source": "home/miubomz/.config/mpv/fonts",
+      "destination": "etc/skel/.config/mpv/fonts"
+    },
+    {
+      "source": "home/miubomz/.config/mpv/script-opts",
+      "destination": "etc/skel/.config/mpv/script-opts"
+    },
+    {
+      "source": "var/lib/flatpak",
+      "destination": "var/lib/flatpak"
+    },
+    {
+      "source": "usr/share/keyrings/microsoft.gpg",
+      "destination": "usr/share/keyrings/microsoft.gpg"
+    },
+    {
+      "source": "usr/share/keyrings/vivaldi-16BD9233.gpg",
+      "destination": "usr/share/keyrings/vivaldi-16BD9233.gpg"
+    },
+    {
+      "source": "etc/apt/sources.list.d/vscode.sources",
+      "destination": "etc/apt/sources.list.d/vscode.sources"
+    },
+    {
+      "source": "etc/apt/sources.list.d/vivaldi.sources",
+      "destination": "etc/apt/sources.list.d/vivaldi.sources"
+    },
+    {
+      "source": "home/miubomz/.cache/mise/python/pyenv",
+      "destination": "etc/skel/.cache/mise/python/pyenv"
+    }
+  ],
+  "flatpaks": [
+    {
+      "ref": "app/com.mattjakeman.ExtensionManager/x86_64/stable",
+      "origin": "flathub",
+      "commit": "258d01400a2f718423e3a1da19d9fc6e2e12da219750937b547ba1ae346c4d74",
+      "version": "0.6.5"
+    },
+    {
+      "ref": "app/com.raggesilver.BlackBox/x86_64/stable",
+      "origin": "flathub",
+      "commit": "a3642e747cc3fe0f2c73e68f22205197b66259e0a417c30ccab0b251dd579680",
+      "version": "0.14.0"
+    },
+    {
+      "ref": "app/io.github.Qalculate/x86_64/stable",
+      "origin": "flathub",
+      "commit": "5280aeceed2e02b45abf92ab09dab44f7fd52be783ba42645eccefa358d24010",
+      "version": "5.12.0"
+    },
+    {
+      "ref": "app/io.github.flattool.Warehouse/x86_64/stable",
+      "origin": "flathub",
+      "commit": "9091b88e97e94d72540d65ad6840f73a8157683a9b79906f2e2a575d83f7bc46",
+      "version": "2.2.0"
+    },
+    {
+      "ref": "app/it.mijorus.gearlever/x86_64/stable",
+      "origin": "flathub",
+      "commit": "3cb51600bc734bd87fb498663b57bfb02530610aeeffe13804a8bbb6c805d3cc",
+      "version": "4.6.2"
+    },
+    {
+      "ref": "app/it.mijorus.smile/x86_64/stable",
+      "origin": "flathub",
+      "commit": "4cd97f81d7d5004e389924c88bd9ed37ff2589a2857f0f371cced07e17719c1f",
+      "version": "2.12.2"
+    },
+    {
+      "ref": "runtime/org.freedesktop.Platform/x86_64/25.08",
+      "origin": "flathub",
+      "commit": "d27f7a6a974e40b061070bec1be9e1b52a7a6872b271e6a45c2c34a48bf6fedf",
+      "version": "freedesktop-sdk-25.08.17"
+    },
+    {
+      "ref": "runtime/org.freedesktop.Platform.GL.default/x86_64/25.08",
+      "origin": "flathub",
+      "commit": "0083f33e9a33c454d0f0850d06581e5f991ecf2dbde02e38079db49e01c7ebac",
+      "version": "26.2.2"
+    },
+    {
+      "ref": "runtime/org.freedesktop.Platform.GL.default/x86_64/25.08-extra",
+      "origin": "flathub",
+      "commit": "695a049fc6520a9c8041cbdb35df59f9d38b562b02c6316a36fb2deb50a0992b",
+      "version": "26.2.2"
+    },
+    {
+      "ref": "runtime/org.freedesktop.Platform.GL.default/x86_64/26.08",
+      "origin": "flathub",
+      "commit": "badc1097c419e73781cf098413ffa8e7bf7db3528572c11712265b9193921842",
+      "version": "26.2.2"
+    },
+    {
+      "ref": "runtime/org.freedesktop.Platform.GL.default/x86_64/26.08-extra",
+      "origin": "flathub",
+      "commit": "78bffb38496d50460493f1c19382be4e6a53fd7f90c82ea6339c26c33d46f272",
+      "version": "26.2.2"
+    },
+    {
+      "ref": "runtime/org.freedesktop.Platform.codecs-extra/x86_64/25.08-extra",
+      "origin": "flathub",
+      "commit": "7ccd63f7532e93ce345b67dedc492748bba449917e81a031502715bc38e3f438",
+      "version": ""
+    },
+    {
+      "ref": "runtime/org.freedesktop.Platform.codecs-extra/x86_64/26.08-extra",
+      "origin": "flathub",
+      "commit": "c39642255da41e44561bb095bcfad5ae86b003822c009eb5eb0d1c8d31ebc93e",
+      "version": ""
+    },
+    {
+      "ref": "app/org.gnome.Boxes/x86_64/stable",
+      "origin": "flathub",
+      "commit": "476600abc122ef11ed4ec4cf880465e3834449447188e29db1a3c91e66abf47f",
+      "version": "50.0"
+    },
+    {
+      "ref": "runtime/org.gnome.Boxes.Extension.OsinfoDb/x86_64/stable",
+      "origin": "flathub",
+      "commit": "87fe908d77df18b5531257a84d836e37d0438d530af6e06000c52feb24901814",
+      "version": "20251212"
+    },
+    {
+      "ref": "app/org.gnome.Evince/x86_64/stable",
+      "origin": "flathub",
+      "commit": "9f0403ef260ec7a60409742bc04348dc5d636cb7781ca03b589594e3437855ed",
+      "version": "48.4"
+    },
+    {
+      "ref": "runtime/org.gnome.Platform/x86_64/49",
+      "origin": "flathub",
+      "commit": "2bb946ea4ebb050f6a32f90e979feb975b08280d1ff1aac881dec3d1361ad84d",
+      "version": ""
+    },
+    {
+      "ref": "runtime/org.gnome.Platform/x86_64/50",
+      "origin": "flathub",
+      "commit": "0bd5091046708e64bc882e8349877cfbae713f6a1e2d0487a5f10af820a2d792",
+      "version": ""
+    },
+    {
+      "ref": "runtime/org.gnome.Platform/x86_64/51",
+      "origin": "flathub",
+      "commit": "95a671a9704f98cf4ec4904f24a3ddafe546262eac89c56ac7c59e51feac3bf5",
+      "version": ""
+    },
+    {
+      "ref": "app/org.gnome.Snapshot/x86_64/stable",
+      "origin": "flathub",
+      "commit": "8a1a93d2335c92f28d54590f2fa1ee60390bbfca4d89a1bcefe3bc688aa75301",
+      "version": "51.0"
+    },
+    {
+      "ref": "app/org.gnome.SoundRecorder/x86_64/stable",
+      "origin": "flathub",
+      "commit": "3800cfb927ef666da099097d76df00945c1474051d533d9ff421ea0be74532ca",
+      "version": "42.0"
+    },
+    {
+      "ref": "app/org.gnome.meld/x86_64/stable",
+      "origin": "flathub",
+      "commit": "7449737ec00ed01bcd2c2db6940a5b2c5e6aca1dbe12aaf620b062d3d51a607b",
+      "version": "3.24.0"
+    },
+    {
+      "ref": "app/org.gnome.seahorse.Application/x86_64/stable",
+      "origin": "flathub",
+      "commit": "0890db4b0ae5f07ddd8933f91bff200cdcc0ade0a2c43eda1d2da49456b66610",
+      "version": "47.0"
+    },
+    {
+      "ref": "runtime/org.kde.Platform/x86_64/6.10",
+      "origin": "flathub",
+      "commit": "31742ff0f905913c512ea732960bbdeffa8306dcbebca45eeee62bfed0ca03a3",
+      "version": ""
+    },
+    {
+      "ref": "runtime/org.kde.Platform/x86_64/6.11",
+      "origin": "flathub",
+      "commit": "fe192771c0992ad873e6a9ccc6e4f087c76314ce5ced165650cc7ea045a6bbaa",
+      "version": ""
+    },
+    {
+      "ref": "app/org.libreoffice.LibreOffice/x86_64/stable",
+      "origin": "flathub",
+      "commit": "c3110993f45de72735bea42838653772abc561295e447333ff2025b0825e8837",
+      "version": "26.8.1.1"
+    },
+    {
+      "ref": "app/org.nickvision.tubeconverter/x86_64/stable",
+      "origin": "flathub",
+      "commit": "be83cfe9ea909c4fa80c0a86d62a880ad7b7783993c29e719d076f9ed68bdc30",
+      "version": "2026.5.0"
+    },
+    {
+      "ref": "app/org.nomacs.ImageLounge/x86_64/stable",
+      "origin": "flathub",
+      "commit": "b343340104f1ab512cee166f8222c5091ea31d4b20917c0fdd18612f5359af55",
+      "version": "3.23"
+    },
+    {
+      "ref": "app/org.pgadmin.pgadmin4/x86_64/stable",
+      "origin": "flathub",
+      "commit": "4670f662813d56ba9a0093080793c3e2c82f61e5085b04105a04791a7b0b9240",
+      "version": "9.18"
+    },
+    {
+      "ref": "app/org.qbittorrent.qBittorrent/x86_64/stable",
+      "origin": "flathub",
+      "commit": "f1b9e33319575d3c5c24efb5f57b613744264b515a0019c2064291c723594b0e",
+      "version": "5.2.4"
+    },
+    {
+      "ref": "app/org.remmina.Remmina/x86_64/stable",
+      "origin": "flathub",
+      "commit": "d40938f656ca5f3699f63fb3a926d321d24e36c63edb97cca8a3d14108a5c65c",
+      "version": "1.4.43"
+    }
+  ],
+  "payload": {
+    "sha256": "a89af391f82d6e661ae6aa5f419553133a32426b5db7e9ac79bf2c766a37bc74",
+    "files": 441621
+  },
+  "mise_installed": {
+    "go": [
+      "1.27.1"
+    ],
+    "java": [
+      "27.0.0"
+    ],
+    "node": [
+      "26.10.0"
+    ],
+    "python": [
+      "3.10.22",
+      "3.11.17"
+    ],
+    "rust": [
+      "1.99.0"
+    ]
+  },
+  "homebrew_cellar": {
+    "binutils": [
+      "2.47"
+    ],
+    "gcc": [
+      "16.2.0"
+    ],
+    "gmp": [
+      "6.3.0"
+    ],
+    "isl": [
+      "0.28"
+    ],
+    "libmpc": [
+      "1.4.1"
+    ],
+    "lz4": [
+      "1.10.0"
+    ],
+    "mpfr": [
+      "4.2.2"
+    ],
+    "xz": [
+      "5.8.4"
+    ],
+    "zlib-ng-compat": [
+      "2.3.3_1"
+    ],
+    "zstd": [
+      "1.5.7_1"
+    ]
+  },
+  "foreign_packages": {
+    "actions-for-nautilus_2.0.1_all.deb": "3edd6ec1426c74d6d8c888e6ec9cc61ccac88f49d664d9d5694e88c56993adf6",
+    "code_1.140.0-1790759618_amd64.deb": "1deb5811b29ec73bbdff07ccd27ac2a8e5943a8a56c33ef4c0d94b6e1402b048",
+    "libfuse2t64_2.9.9-9_amd64.deb": "c8ca3bb0cf8b46b94fc70c3f5da1f0c13e8b53fbb643e45e9f2b6400fd3970c8",
+    "vivaldi-stable_8.2.4133.80-1_amd64.deb": "e16def4f6a6aff12eec7f8554f5c37f4c8703a5008b0a816532df797cf0dfd2b",
+    "fetch_2.3.0-pacstall1~git7b19d22c_amd64.deb": "afd3176584eb83171361dbc61b6b12c329279187339774e12558d756ff2defeb",
+    "ibus-mozc_2.29.5160.102+dfsg-1.7_amd64.deb": "721db8616fd99024df53b0a09270cfa0d94673559f5efb9b9f16fe91d2f6d7bd",
+    "mozc-data_2.29.5160.102+dfsg-1.7_all.deb": "88ee38bdabc0710c6485f07103fbf02ae4d6311da4bfbb963c179dc904eb41de",
+    "mozc-server_2.29.5160.102+dfsg-1.7_amd64.deb": "b957d6c737712dec0f3904cd986a700db035ce0263e844842c3e7d8bb4d0f3fc",
+    "mozc-utils-gui_2.29.5160.102+dfsg-1.7_amd64.deb": "5d194cdb780ea61430e8da82d1f535b40f1f71080d9614899f37392b9fc1c0af",
+    "spdx-licenses_3.27.0+ds-1_all.deb": "ef5b8bbe0528dfae3f2a89b47102bd5c952ba28fd80c89319e50e5141d0d1742",
+    "libavcodec62_8.1.2-2+b3_amd64.deb": "f2201803fd70bedae769e33642b82fe2c1a773295ea6d046989821d86c5d316b",
+    "libavfilter11_8.1.2-2+b3_amd64.deb": "f54e5b0d98e88c50024d23140c5c3135cfa71a5cd1c4e8157ef164dfd595ac98",
+    "libavformat62_8.1.2-2+b3_amd64.deb": "2458db4ef1ab556e7aedb3ec97227fdde6c90cc1dbe8a402cf31870bb0d0d5a6",
+    "linux-base-7.2.6+deb14-amd64_7.2.6-1_amd64.deb": "7cdf66ac46c59232207ce72e350290bc258225e1b60ecac13d2771adbaeca4e5",
+    "linux-binary-7.2.6+deb14-amd64_7.2.6-1_amd64.deb": "8d60e6494797a628b501fa8603346df0e68d38b6a6d155a6ea1169fdf1c4f8a4",
+    "linux-modules-7.2.6+deb14-amd64_7.2.6-1_amd64.deb": "f5df65c0ad0f02f78a80d6a40ac9d8d10caae31ea3dfbc8501ae6b6df58a0705",
+    "linux-image-7.2.6+deb14-amd64_7.2.6-1_amd64.deb": "ea536efaa424d8dcc27be6c5767e0d654b12552794be8a7ce12f164b07763ada",
+    "coinor-libcgl1_0.60.9+ds-1+b2_amd64.deb": "59cce6fc5e2dd7951efabfc5bb4ade8e2ddd121d930147e73fb6f90422926f40",
+    "fonts-evertype-conakry_0.002+source-5_all.deb": "947f31619e8b35dfe15fa5a109f663e5465870dfc2ab50d5fe4ade5eb18189cf",
+    "fonts-fantasque-sans_1.8.0+git20220316+dfsg-6_all.deb": "ea488270d026b03f307c82ae7a51ec196d4d5235b4e2d4da62dd588b0ef43f0b",
+    "fonts-farsiweb_0.4.dfsg-13_all.deb": "584aad8beef683161125b7f5d8665a9a4b15db47094245d36620e99b19de71d2",
+    "fonts-ferrite-core_2.02+ds-3_all.deb": "87dc466598b95071c6f3afb2b34f69d773513cbb5a1859a9c0b200b3ac083d60",
+    "fonts-gamaliel_0.1-3_all.deb": "60ddbfd8a0120bdbb67e50017fb1d7d8cb653f0362e203d2e1a6536bca32fed7",
+    "fonts-gfs-gazis_1.1-6_all.deb": "575036cc724aa1e99f85dbc2a3095e67c17f8fb64a83033a5e67815e558c5d8e",
+    "fonts-gnutypewriter_1.0-3_all.deb": "59bda78ef5d7b8d6bf1c5514a2d6ed96867c8f0b44e4032433f0c0353f4f384d",
+    "fonts-kode-mono_1.207+ds-1_all.deb": "207f475829c1950a8011f8c6bff687d8e5be10faed1b493e2ae448cd3aae4d38",
+    "gir1.2-gtk-4.0_4.22.4+ds-1_amd64.deb": "80496fb253bd3f5d57ef148cb33b2de826a801799880c566ed241708a7b9ab8d",
+    "gir1.2-nautilus-4.1_50.2.2-2_amd64.deb": "0e1e3e26ab6d582c0c154f630fac2482174c3e14912d42b12c75ffd61eca4ca0",
+    "gstreamer1.0-gtk4_0.15.2-1_amd64.deb": "234450978d0f65e2a97102f31b1ee905ca672063d8e5994618872511da21e78a",
+    "gtk-update-icon-cache_4.22.4+ds-1_amd64.deb": "762cd885eb69cdc3bbfcc837739c604ba23962b1e4c49f7c86b56f67dca22909",
+    "libgtk-4-1_4.22.4+ds-1_amd64.deb": "07eea1ca862836a5a8f373dc22e440c9e5c1902765a55db30a6f2176dfb7940c",
+    "libgtk-4-bin_4.22.4+ds-1_amd64.deb": "85864e89b527342de13391608c612105ae39e6db72ce26b9802c3f05c98418df",
+    "libgtk-4-common_4.22.4+ds-1_all.deb": "3c508760662646955b4731bbc4dc0eff2c9f5a8b361eb05ee958a2194ea650bf",
+    "libmd-dev_1.2.0-2_amd64.deb": "6de822ff5562277342af3006ef9152ee065f631d6a00b65e380d18f103b0135c",
+    "libmd0_1.2.0-2_amd64.deb": "757a90b6d46b0a700ec615d726fc7ff0c0275938518a97e26bd6c64b0946f4cf",
+    "libmozjs-140-0_140.16.0-1_amd64.deb": "b0a50af72e7a50d126760b5acac724ec5258ae2ce43e4e07eadba974533152d5",
+    "libnautilus-extension4_50.2.2-2_amd64.deb": "c725266431c97e3d2c66087c77124591ae778933ef332e0bafcbc52569301fc5",
+    "nautilus-data_50.2.2-2_all.deb": "2798bfea86046b90385bc553cf62ab3786722fcce0b171bd2691f424b359219f",
+    "nautilus_50.2.2-2_amd64.deb": "a2d9dda656a8b3e31f67cd76ca07fe6f8db9abdebc8de934cadcfed360461856",
+    "python3-dbus_1.4.0-1+b2_amd64.deb": "d2700f3dcf6031082a7b143efdeb085b73ae1de628d203cf5a8437c3ab06d405"
+  },
+  "mise_pyenv_commit": "f9d17bfc06ccbda37edd84df99a4f50d8d7d2a4a"
+}

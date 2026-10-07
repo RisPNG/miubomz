@@ -1,0 +1,5 @@
+---
+type: job
+name: dpkg-unsafe-io-undo
+interface: python
+script: main.py

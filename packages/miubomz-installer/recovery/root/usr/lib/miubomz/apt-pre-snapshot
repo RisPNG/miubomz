@@ -1,0 +1,38 @@
+#!/usr/bin/python3
+import datetime
+import os
+from pathlib import Path
+import subprocess
+
+
+def main():
+    info_fd = int(os.environ.get("APT_HOOK_INFO_FD", "0"))
+    with os.fdopen(info_fd) as stream:
+        transaction = stream.read()
+    if not Path("/var/lib/miubomz/installed").exists():
+        return
+    if any(option in Path("/proc/cmdline").read_text().split()
+           for option in ("boot=live", "boot=casper")):
+        return
+    filesystem = subprocess.check_output(
+        ["findmnt", "--noheadings", "--output", "FSTYPE", "--target", "/"],
+        text=True).strip()
+    if filesystem != "btrfs":
+        return
+    operations = transaction.partition("\n\n")[2].splitlines()
+    packages = [line.split()[0] for line in operations if line.strip()]
+    if not packages:
+        return
+    context = ", ".join(dict.fromkeys(packages[:12]))
+    if len(packages) > 12:
+        context += f", and {len(packages) - 12} more"
+    timestamp = datetime.datetime.now().astimezone().isoformat(timespec="seconds")
+    comment = f"Before APT transaction {timestamp}"
+    if context:
+        comment += f": {context}"
+    subprocess.run(["timeshift", "--create", "--scripted", "--tags", "D",
+                    "--comments", comment], check=True)
+
+
+if __name__ == "__main__":
+    main()

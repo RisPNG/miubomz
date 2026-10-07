@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+if [ "$(findmnt --noheadings --output FSTYPE --target /)" = btrfs ]; then
+    timeshift --check --scripted
+fi

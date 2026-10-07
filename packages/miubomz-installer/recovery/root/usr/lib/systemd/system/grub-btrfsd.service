@@ -1,0 +1,21 @@
+[Unit]
+Description=Regenerate the GRUB Timeshift snapshot menu
+ConditionPathExists=/var/lib/miubomz/installed
+ConditionPathExists=/etc/timeshift/timeshift.json
+ConditionKernelCommandLine=!boot=live
+ConditionKernelCommandLine=!overlayroot=tmpfs:recurse=0
+After=miubomz-recovery-start.service
+
+[Service]
+Type=simple
+TimeoutStartSec=5min
+LogLevelMax=notice
+Environment="PATH=/sbin:/bin:/usr/sbin:/usr/bin"
+EnvironmentFile=/etc/default/grub-btrfs/config
+ExecStartPre=/usr/sbin/update-grub
+ExecStart=/usr/bin/grub-btrfsd --syslog --timeshift-auto
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

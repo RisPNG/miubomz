@@ -1,0 +1,5 @@
+---
+type: job
+name: sources-media-unmount
+interface: python
+script: main.py

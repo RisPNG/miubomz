@@ -1,0 +1,5 @@
+---
+type: job
+name: miubomz-target
+interface: python
+script: main.py

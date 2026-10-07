@@ -1,0 +1,11 @@
+#!/bin/sh
+set -eu
+
+sudo mv /etc/fstab /etc/fstab.orig.calamares
+restore() {
+    xhost -si:localuser:root
+    sudo mv /etc/fstab.orig.calamares /etc/fstab
+}
+trap restore EXIT HUP INT TERM
+xhost +si:localuser:root
+pkexec calamares

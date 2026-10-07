@@ -1,0 +1,592 @@
+{
+  "alternate_error_pages": {
+    "enabled": false
+  },
+  "autofill": {
+    "credit_card_enabled": false,
+    "profile_enabled": false
+  },
+  "credentials_enable_service": false,
+  "enable_do_not_track": true,
+  "intl": {
+    "accept_languages": "en-US",
+    "selected_languages": "en-US"
+  },
+  "payments": {
+    "can_make_payment_enabled": false
+  },
+  "safebrowsing": {
+    "enabled": false
+  },
+  "search": {
+    "suggest_enabled": true
+  },
+  "profile": {
+    "default_content_setting_values": {
+      "mixed_script": 1,
+      "popups": 1,
+      "subresource_filter": 1
+    }
+  },
+  "vivaldi": {
+    "address_bar": {
+      "position": 0,
+      "search": {
+        "suggest_enabled": true
+      },
+      "show_qr_generator": true,
+      "show_search_suggestions_warning": -1,
+      "visible": false
+    },
+    "appearance": {
+      "css_ui_mods_directory": "/usr/share/miubomz/vivaldi",
+      "density": true,
+      "disable_title_bar": false
+    },
+    "auto_hide": {
+      "address_bar": false,
+      "bookmarks_bar": false,
+      "enabled": true,
+      "panel": false,
+      "show_introduction": false,
+      "status_bar": false,
+      "tab_bar": true
+    },
+    "bookmarks": {
+      "confirm_opening": false,
+      "language": "en-US",
+      "open_in_new_tab": true,
+      "panel": {
+        "sorting": {
+          "sortField": "manually",
+          "sortOrder": 1
+        }
+      },
+      "version": "39",
+      "deleted_partners": [
+        "01d6f4e4-a695-4450-a65d-f69366027dae",
+        "04f107b7-203e-49e6-ab97-d6b9e613cc4a",
+        "0efbb5fb-d366-4a91-95b1-b5690a0cf0ef",
+        "0f0a0d3a-bf40-4367-a65c-ed43f85888ed",
+        "12c04539-d01e-4fd3-9fbf-aa09a91e91ba",
+        "25672435-2187-4c7b-aacc-8ca9c75e69b5",
+        "292cbc31-d911-4f3b-b631-e3c3c8755666",
+        "2a44b514-79a6-43aa-a493-a19dcbef49ea",
+        "37166148-e194-4693-98ca-590c102ab5a5",
+        "37ca0399-d4b3-44f8-9fa8-5e678c59aed5",
+        "44d32981-5dcf-4a1f-be5b-3c0d03c7a0a1",
+        "53e74366-122a-4ec9-a75c-c6d395dc1284",
+        "576c0090-2626-4554-bb9a-6f9c0bacaf47",
+        "68fc9516-59ac-447e-a8a6-ff27d558da91",
+        "6dafc780-86dc-40e6-ac81-92b033fd8083",
+        "6f7e802b-87ed-454d-ae23-95407a64de52",
+        "775f68b2-b81f-464a-bdf7-d5f62a2484f7",
+        "7dc00b6d-b26b-4371-83cb-2cd63274b9b8",
+        "82853ad9-4212-452c-bb3b-541d154b2f73",
+        "844923d5-bae9-400f-b260-3e72c919b4c0",
+        "848a4ba4-5f69-4a38-8ccc-d0cea9fe0709",
+        "8cb7c7d5-7ddb-43ab-a46c-9c08a0f783e8",
+        "8fe00cea-a6cd-4581-b01c-265281a681c1",
+        "930d9804-4a0f-45ee-9317-b78ed2b548fd",
+        "9bed7c4c-c99e-4843-9da4-5a40dc567c82",
+        "a91e4453-0a84-4a58-be63-eb3d7c257c35",
+        "b095403c-0348-4d47-b03e-c9b408bfc92b",
+        "ba6d8580-e93e-4f5a-b0c6-c23e24a34183",
+        "cbe202d3-71df-4491-a825-448e4d745e43",
+        "d5158dd0-fb6a-49e4-922a-75266cde3f84",
+        "d680347f-1073-46b9-a546-ae0238e7b9d9",
+        "e5c019f8-c8a4-403c-99c8-d3502d7d09b3",
+        "eb5c2f32-c648-4f69-a875-472da896d50b",
+        "f16ffed1-6c76-411c-a1e2-a251211e56ac",
+        "f56c1a38-3e9e-48fc-8d6c-b800f226dbfb",
+        "f79cd6e8-ebc0-444d-ac96-00da456dcb59"
+      ]
+    },
+    "dashboard": {
+      "columns": 4,
+      "enabled": true,
+      "widgets": []
+    },
+    "downloads": {
+      "start_automatically": true
+    },
+    "geolocation": {
+      "list": []
+    },
+    "history": {
+      "days_to_keep_visits": 3650
+    },
+    "menu": {
+      "display": 1,
+      "icon_type": 0
+    },
+    "panels": {
+      "as_overlay": {
+        "auto_close": false,
+        "enabled": true
+      },
+      "elements": [
+        {
+          "id": "PanelBookmarks",
+          "resizable": false,
+          "width": 400
+        },
+        {
+          "id": "PanelReadingList",
+          "resizable": false,
+          "width": -1
+        },
+        {
+          "id": "PanelDownloads",
+          "resizable": false,
+          "width": -1
+        },
+        {
+          "id": "PanelHistory",
+          "resizable": false,
+          "width": -1
+        },
+        {
+          "id": "PanelNotes",
+          "resizable": false,
+          "width": -1
+        },
+        {
+          "id": "PanelWindow",
+          "resizable": false,
+          "width": -1
+        },
+        {
+          "id": "PanelTranslate",
+          "resizable": false,
+          "width": -1
+        },
+        {
+          "id": "PanelMail",
+          "resizable": false,
+          "width": -1
+        },
+        {
+          "id": "PanelCalendar",
+          "resizable": false,
+          "width": -1
+        },
+        {
+          "id": "PanelTasks",
+          "resizable": false,
+          "width": -1
+        },
+        {
+          "id": "PanelFeeds",
+          "resizable": false,
+          "width": -1
+        },
+        {
+          "id": "PanelContacts",
+          "resizable": false,
+          "width": -1
+        },
+        {
+          "id": "PanelSession",
+          "resizable": false,
+          "width": -1
+        }
+      ],
+      "position": 1,
+      "show_toggle": true,
+      "window_defaults": {
+        "barVisible": true,
+        "contentVisible": false,
+        "selectedPanel": "PanelDownloads",
+        "width": 400
+      },
+      "web": {
+        "elements": [],
+        "removed_elements": [
+          {
+            "faviconUrl": "data:image/png;base64,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",
+            "id": "WEBPANEL_ckn7fhhqx0000hc2roo8jshm4",
+            "mobileMode": true,
+            "title": "Wikipedia",
+            "url": "https://wikipedia.org",
+            "zoom": 1
+          },
+          {
+            "faviconUrl": "data:image/png;base64,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",
+            "id": "WEBPANEL_ckmam0bsw00002y5xoafpww5i",
+            "mobileMode": true,
+            "title": "Vivaldi Help",
+            "url": "https://help.vivaldi.com/",
+            "zoom": 1
+          },
+          {
+            "faviconUrl": "data:image/png;base64,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",
+            "id": "WEBPANEL_949d4873-deed-4168-b306-92d1848687a5",
+            "mobileMode": true,
+            "title": "Vivaldi Social",
+            "url": "https://social.vivaldi.net/",
+            "zoom": 1
+          }
+        ]
+      }
+    },
+    "popups": {
+      "show_in_tab": false
+    },
+    "privacy": {
+      "adverse_ad_block": {
+        "enabled": false
+      }
+    },
+    "startpage": {
+      "navigation": 2
+    },
+    "status_bar": {
+      "display": 0
+    },
+    "system": {
+      "show_exit_confirmation_dialog": false
+    },
+    "tabs": {
+      "activation": {
+        "prefer_related": true
+      },
+      "align_next": true,
+      "bar": {
+        "position": 1
+      },
+      "close_button_left": false,
+      "confirm_closing_tabs": false,
+      "confirm_closing_threshold": 99,
+      "never_close_last": true,
+      "stacking": {
+        "mode": 3
+      },
+      "thumbnails": false,
+      "visible": true
+    },
+    "theme": {
+      "dim_blurred": true,
+      "schedule": {
+        "enabled": 0,
+        "o_s": {
+          "dark": "Vivaldi2",
+          "light": "Vivaldi2"
+        }
+      },
+      "simple_scrollbar": true
+    },
+    "themes": {
+      "current": "Vivaldi2"
+    },
+    "toolbars": {
+      "navigation": [
+        "Back",
+        "Forward",
+        "Reload",
+        "AddressField",
+        "DownloadButton",
+        "Spacer",
+        "Extensions",
+        "VPNButton",
+        "UpdateButton",
+        "AccountButton"
+      ],
+      "panel": [
+        "PanelBookmarks",
+        "PanelDownloads",
+        "PanelHistory",
+        "PanelTranslate",
+        "PanelWindow",
+        "PanelSession",
+        "Divider",
+        "PanelMail",
+        "PanelContacts",
+        "PanelCalendar",
+        "PanelTasks",
+        "PanelFeeds",
+        "PanelWeb",
+        "FlexibleSpacer"
+      ],
+      "status": [
+        "Settings",
+        "BreakMode",
+        "SyncStatus",
+        "MailStatus",
+        "CalendarStatus",
+        "StatusInfo",
+        "VersionInfo",
+        "AutoHideToggle",
+        "CaptureImages",
+        "TilingToggle",
+        "PageActions",
+        "Zoom",
+        "Clock"
+      ],
+      "tabbar_after": [
+        "NewTab",
+        "FlexibleSpacer",
+        "AccountButton",
+        "FlexibleSpacer",
+        "VPNButton",
+        "UpdateButton"
+      ],
+      "tabbar_before": [
+        "WorkspaceButton",
+        "TabButton",
+        "Extensions",
+        "FlexibleSpacer",
+        "Back",
+        "Reload",
+        "Forward",
+        "AddressField",
+        "Spacer"
+      ]
+    },
+    "translate": {
+      "enabled": true
+    },
+    "webpages": {
+      "translate_selection_button": {
+        "enabled": true
+      }
+    },
+    "windows": {
+      "linux_alt_controls": false,
+      "use_native_decoration": true
+    },
+    "startup": {
+      "has_seen_welcome_page": true,
+      "has_seen_feature": 1,
+      "first_seen_version": "8.2.4133.80",
+      "last_seen_version": "8.2.4133.80"
+    },
+    "welcome": {
+      "read_pages": [
+        "intro",
+        "a11y_settings",
+        "account",
+        "control",
+        "import_data",
+        "tracker_and_ad",
+        "layouts",
+        "personalize",
+        "panel_internal",
+        "panel_apps",
+        "welcome_feature_amount",
+        "mail_setup"
+      ]
+    }
+  },
+  "default_search_provider": {
+    "guid": "485bf7d3-0215-45af-87dc-538868000001",
+    "guid_image": "485bf7d3-0215-45af-87dc-538868000001",
+    "guid_private": "485bf7d3-0215-45af-87dc-538868000001",
+    "guid_search_field": "485bf7d3-0215-45af-87dc-538868000001",
+    "guid_search_field_private": "485bf7d3-0215-45af-87dc-538868000001",
+    "guid_speeddials": "485bf7d3-0215-45af-87dc-538868000001",
+    "guid_speeddials_private": "485bf7d3-0215-45af-87dc-538868000001"
+  },
+  "default_search_provider_data": {
+    "image_template_url_data": {
+      "alternate_urls": [
+        "https://www.google.com/#q={searchTerms}",
+        "https://www.google.com/search#q={searchTerms}",
+        "https://www.google.com/webhp#q={searchTerms}",
+        "https://www.google.com/s#q={searchTerms}",
+        "https://www.google.com/s?q={searchTerms}"
+      ],
+      "contextual_search_url": "{google:baseURL}_/contextualsearch?{google:contextualSearchVersion}{google:contextualSearchContextData}",
+      "favicon_url": "https://www.google.com/images/branding/product/ico/googleg_lodp.ico",
+      "image_url": "{google:baseSearchByImageURL}upload",
+      "image_url_post_params": "encoded_image={google:imageThumbnail},image_url={google:imageURL},sbisrc={google:imageSearchSource},original_width={google:imageOriginalWidth},original_height={google:imageOriginalHeight},processed_image_dimensions={google:processedImageDimensions}",
+      "input_encodings": [
+        ""
+      ],
+      "keyword": "g",
+      "prepopulate_id": 1,
+      "safe_for_autoreplace": true,
+      "search_url_post_params": "",
+      "short_name": "Google",
+      "suggestions_url": "https://www.google.com/complete/search?client=chrome&q={searchTerms}",
+      "suggestions_url_post_params": "",
+      "synced_guid": "485bf7d3-0215-45af-87dc-538868000001",
+      "url": "{google:baseURL}search?q={searchTerms}&{google:originalQueryForSuggestion}{google:prefetchSource}{google:sourceId}{google:contextualSearchVersion}ie={inputEncoding}"
+    },
+    "mirrored_template_url_data": {
+      "alternate_urls": [
+        "https://www.google.com/#q={searchTerms}",
+        "https://www.google.com/search#q={searchTerms}",
+        "https://www.google.com/webhp#q={searchTerms}",
+        "https://www.google.com/s#q={searchTerms}",
+        "https://www.google.com/s?q={searchTerms}"
+      ],
+      "contextual_search_url": "{google:baseURL}_/contextualsearch?{google:contextualSearchVersion}{google:contextualSearchContextData}",
+      "favicon_url": "https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico",
+      "image_url": "{google:baseSearchByImageURL}upload",
+      "image_url_post_params": "encoded_image={google:imageThumbnail},image_url={google:imageURL},sbisrc={google:imageSearchSource},original_width={google:imageOriginalWidth},original_height={google:imageOriginalHeight},processed_image_dimensions={google:processedImageDimensions}",
+      "input_encodings": [
+        ""
+      ],
+      "keyword": "g",
+      "prepopulate_id": 1,
+      "safe_for_autoreplace": true,
+      "search_url_post_params": "",
+      "short_name": "Google",
+      "suggestions_url": "https://www.google.com/complete/search?client=chrome&q={searchTerms}",
+      "suggestions_url_post_params": "",
+      "synced_guid": "485bf7d3-0215-45af-87dc-538868000001",
+      "url": "{google:baseURL}search?q={searchTerms}&{google:originalQueryForSuggestion}{google:prefetchSource}{google:sourceId}{google:contextualSearchVersion}ie={inputEncoding}"
+    },
+    "private_search_field_template_url_data": {
+      "alternate_urls": [
+        "https://www.google.com/#q={searchTerms}",
+        "https://www.google.com/search#q={searchTerms}",
+        "https://www.google.com/webhp#q={searchTerms}",
+        "https://www.google.com/s#q={searchTerms}",
+        "https://www.google.com/s?q={searchTerms}"
+      ],
+      "contextual_search_url": "{google:baseURL}_/contextualsearch?{google:contextualSearchVersion}{google:contextualSearchContextData}",
+      "favicon_url": "https://www.google.com/images/branding/product/ico/googleg_lodp.ico",
+      "image_url": "{google:baseSearchByImageURL}upload",
+      "image_url_post_params": "encoded_image={google:imageThumbnail},image_url={google:imageURL},sbisrc={google:imageSearchSource},original_width={google:imageOriginalWidth},original_height={google:imageOriginalHeight},processed_image_dimensions={google:processedImageDimensions}",
+      "input_encodings": [
+        ""
+      ],
+      "keyword": "g",
+      "prepopulate_id": 1,
+      "safe_for_autoreplace": true,
+      "search_url_post_params": "",
+      "short_name": "Google",
+      "suggestions_url": "https://www.google.com/complete/search?client=chrome&q={searchTerms}",
+      "suggestions_url_post_params": "",
+      "synced_guid": "485bf7d3-0215-45af-87dc-538868000001",
+      "url": "{google:baseURL}search?q={searchTerms}&{google:originalQueryForSuggestion}{google:prefetchSource}{google:sourceId}{google:contextualSearchVersion}ie={inputEncoding}"
+    },
+    "private_template_url_data": {
+      "alternate_urls": [
+        "https://www.google.com/#q={searchTerms}",
+        "https://www.google.com/search#q={searchTerms}",
+        "https://www.google.com/webhp#q={searchTerms}",
+        "https://www.google.com/s#q={searchTerms}",
+        "https://www.google.com/s?q={searchTerms}"
+      ],
+      "contextual_search_url": "{google:baseURL}_/contextualsearch?{google:contextualSearchVersion}{google:contextualSearchContextData}",
+      "favicon_url": "https://www.google.com/images/branding/product/ico/googleg_lodp.ico",
+      "image_url": "{google:baseSearchByImageURL}upload",
+      "image_url_post_params": "encoded_image={google:imageThumbnail},image_url={google:imageURL},sbisrc={google:imageSearchSource},original_width={google:imageOriginalWidth},original_height={google:imageOriginalHeight},processed_image_dimensions={google:processedImageDimensions}",
+      "input_encodings": [
+        ""
+      ],
+      "keyword": "g",
+      "prepopulate_id": 1,
+      "safe_for_autoreplace": true,
+      "search_url_post_params": "",
+      "short_name": "Google",
+      "suggestions_url": "https://www.google.com/complete/search?client=chrome&q={searchTerms}",
+      "suggestions_url_post_params": "",
+      "synced_guid": "485bf7d3-0215-45af-87dc-538868000001",
+      "url": "{google:baseURL}search?q={searchTerms}&{google:originalQueryForSuggestion}{google:prefetchSource}{google:sourceId}{google:contextualSearchVersion}ie={inputEncoding}"
+    },
+    "search_field_emplate_url_data": {
+      "alternate_urls": [
+        "https://www.google.com/#q={searchTerms}",
+        "https://www.google.com/search#q={searchTerms}",
+        "https://www.google.com/webhp#q={searchTerms}",
+        "https://www.google.com/s#q={searchTerms}",
+        "https://www.google.com/s?q={searchTerms}"
+      ],
+      "contextual_search_url": "{google:baseURL}_/contextualsearch?{google:contextualSearchVersion}{google:contextualSearchContextData}",
+      "favicon_url": "https://www.google.com/images/branding/product/ico/googleg_lodp.ico",
+      "image_url": "{google:baseSearchByImageURL}upload",
+      "image_url_post_params": "encoded_image={google:imageThumbnail},image_url={google:imageURL},sbisrc={google:imageSearchSource},original_width={google:imageOriginalWidth},original_height={google:imageOriginalHeight},processed_image_dimensions={google:processedImageDimensions}",
+      "input_encodings": [
+        ""
+      ],
+      "keyword": "g",
+      "prepopulate_id": 1,
+      "safe_for_autoreplace": true,
+      "search_url_post_params": "",
+      "short_name": "Google",
+      "suggestions_url": "https://www.google.com/complete/search?client=chrome&q={searchTerms}",
+      "suggestions_url_post_params": "",
+      "synced_guid": "485bf7d3-0215-45af-87dc-538868000001",
+      "url": "{google:baseURL}search?q={searchTerms}&{google:originalQueryForSuggestion}{google:prefetchSource}{google:sourceId}{google:contextualSearchVersion}ie={inputEncoding}"
+    },
+    "speeddials_private_template_url_data": {
+      "alternate_urls": [
+        "https://www.google.com/#q={searchTerms}",
+        "https://www.google.com/search#q={searchTerms}",
+        "https://www.google.com/webhp#q={searchTerms}",
+        "https://www.google.com/s#q={searchTerms}",
+        "https://www.google.com/s?q={searchTerms}"
+      ],
+      "contextual_search_url": "{google:baseURL}_/contextualsearch?{google:contextualSearchVersion}{google:contextualSearchContextData}",
+      "favicon_url": "https://www.google.com/images/branding/product/ico/googleg_lodp.ico",
+      "image_url": "{google:baseSearchByImageURL}upload",
+      "image_url_post_params": "encoded_image={google:imageThumbnail},image_url={google:imageURL},sbisrc={google:imageSearchSource},original_width={google:imageOriginalWidth},original_height={google:imageOriginalHeight},processed_image_dimensions={google:processedImageDimensions}",
+      "input_encodings": [
+        ""
+      ],
+      "keyword": "g",
+      "prepopulate_id": 1,
+      "safe_for_autoreplace": true,
+      "search_url_post_params": "",
+      "short_name": "Google",
+      "suggestions_url": "https://www.google.com/complete/search?client=chrome&q={searchTerms}",
+      "suggestions_url_post_params": "",
+      "synced_guid": "485bf7d3-0215-45af-87dc-538868000001",
+      "url": "{google:baseURL}search?q={searchTerms}&{google:originalQueryForSuggestion}{google:prefetchSource}{google:sourceId}{google:contextualSearchVersion}ie={inputEncoding}"
+    },
+    "speeddials_template_url_data": {
+      "alternate_urls": [
+        "https://www.google.com/#q={searchTerms}",
+        "https://www.google.com/search#q={searchTerms}",
+        "https://www.google.com/webhp#q={searchTerms}",
+        "https://www.google.com/s#q={searchTerms}",
+        "https://www.google.com/s?q={searchTerms}"
+      ],
+      "contextual_search_url": "{google:baseURL}_/contextualsearch?{google:contextualSearchVersion}{google:contextualSearchContextData}",
+      "favicon_url": "https://www.google.com/images/branding/product/ico/googleg_lodp.ico",
+      "image_url": "{google:baseSearchByImageURL}upload",
+      "image_url_post_params": "encoded_image={google:imageThumbnail},image_url={google:imageURL},sbisrc={google:imageSearchSource},original_width={google:imageOriginalWidth},original_height={google:imageOriginalHeight},processed_image_dimensions={google:processedImageDimensions}",
+      "input_encodings": [
+        ""
+      ],
+      "keyword": "g",
+      "prepopulate_id": 1,
+      "safe_for_autoreplace": true,
+      "search_url_post_params": "",
+      "short_name": "Google",
+      "suggestions_url": "https://www.google.com/complete/search?client=chrome&q={searchTerms}",
+      "suggestions_url_post_params": "",
+      "synced_guid": "485bf7d3-0215-45af-87dc-538868000001",
+      "url": "{google:baseURL}search?q={searchTerms}&{google:originalQueryForSuggestion}{google:prefetchSource}{google:sourceId}{google:contextualSearchVersion}ie={inputEncoding}"
+    },
+    "template_url_data": {
+      "alternate_urls": [
+        "https://www.google.com/#q={searchTerms}",
+        "https://www.google.com/search#q={searchTerms}",
+        "https://www.google.com/webhp#q={searchTerms}",
+        "https://www.google.com/s#q={searchTerms}",
+        "https://www.google.com/s?q={searchTerms}"
+      ],
+      "contextual_search_url": "{google:baseURL}_/contextualsearch?{google:contextualSearchVersion}{google:contextualSearchContextData}",
+      "favicon_url": "https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico",
+      "image_url": "{google:baseSearchByImageURL}upload",
+      "image_url_post_params": "encoded_image={google:imageThumbnail},image_url={google:imageURL},sbisrc={google:imageSearchSource},original_width={google:imageOriginalWidth},original_height={google:imageOriginalHeight},processed_image_dimensions={google:processedImageDimensions}",
+      "input_encodings": [
+        ""
+      ],
+      "keyword": "g",
+      "prepopulate_id": 1,
+      "safe_for_autoreplace": true,
+      "search_url_post_params": "",
+      "short_name": "Google",
+      "suggestions_url": "https://www.google.com/complete/search?client=chrome&q={searchTerms}",
+      "suggestions_url_post_params": "",
+      "synced_guid": "485bf7d3-0215-45af-87dc-538868000001",
+      "url": "{google:baseURL}search?q={searchTerms}&{google:originalQueryForSuggestion}{google:prefetchSource}{google:sourceId}{google:contextualSearchVersion}ie={inputEncoding}"
+    }
+  }
+}

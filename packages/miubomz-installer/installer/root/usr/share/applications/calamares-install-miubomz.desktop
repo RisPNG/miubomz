@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Install Miubomz
+GenericName=Calamares Installer
+Exec=calamares-install-miubomz
+Comment=Install Debian Testing with the Miubomz desktop
+Keywords=calamares;system;install;debian;installer;
+Icon=install-debian
+Terminal=false
+Categories=Qt;System;
+StartupWMClass=calamares
+StartupNotify=true

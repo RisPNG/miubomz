@@ -1,0 +1,13 @@
+[Unit]
+Description=Initialize native Timeshift scheduling
+ConditionPathExists=/var/lib/miubomz/installed
+ConditionKernelCommandLine=!boot=live
+Before=cron.service grub-btrfsd.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/lib/miubomz/recovery-start
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

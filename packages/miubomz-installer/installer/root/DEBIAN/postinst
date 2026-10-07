@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+if [ "$1" = configure ] && command -v update-icon-caches >/dev/null; then
+    update-icon-caches /usr/share/icons/hicolor
+fi

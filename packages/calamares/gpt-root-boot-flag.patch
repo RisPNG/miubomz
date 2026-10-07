@@ -1,0 +1,35 @@
+Description: Keep the legacy BIOS root boot flag off GPT Linux partitions
+Author: Miubomz
+Forwarded: no
+
+--- a/src/modules/partition/core/PartitionCoreModule.cpp
++++ b/src/modules/partition/core/PartitionCoreModule.cpp
+@@ -985,7 +985,7 @@
+                                   PartitionNode* parent,
+                                   const PartitionRole& role )
+ {
+-    const bool isEfi = PartUtils::isEfiSystem();
++    const bool useLegacyBootFlag = !PartUtils::isEfiSystem() && dev->partitionTable()->type() != PartitionTable::gpt;
+     QList< Partition* > partList
+         = m_partLayout.createPartitions( dev, firstSector, lastSector, luksFsType, luksPassphrase, parent, role );
+ 
+@@ -993,8 +993,8 @@
+     // PartitionInfo::mountPoint() says where it will be mounted in the target system.
+     // .. the latter is more interesting.
+     //
+-    // If we have a separate /boot, mark that one as bootable,
+-    // otherwise mark the root / as bootable.
++    // On BIOS with a non-GPT table, mark a separate /boot as bootable,
++    // otherwise mark the root / as bootable. GPT uses dedicated boot partitions.
+     //
+     // If the layout hasn't applied a label to the partition,
+     //      apply a default label (to boot and root, at least).
+@@ -1018,7 +1018,7 @@
+         if ( ( separate_boot_partition && is_boot( part ) ) || ( !separate_boot_partition && is_root( part ) ) )
+         {
+             createPartition(
+-                dev, part, part->activeFlags() | ( isEfi ? KPM_PARTITION_FLAG( None ) : KPM_PARTITION_FLAG( Boot ) ) );
++                dev, part, part->activeFlags() | ( useLegacyBootFlag ? KPM_PARTITION_FLAG( Boot ) : KPM_PARTITION_FLAG( None ) ) );
+         }
+         else
+         {

@@ -1,0 +1,13 @@
+# Desktop defaults
+
+`root/` builds the `miubomz-desktop` Debian package. Its defaults come from the clean configuration recorded for the 4 October 2026 Desired Results reference desktop.
+
+GNOME and native application preferences live in the text dconf system database. There are no locks: user preferences override the distribution defaults. Monitor-specific Dash to Panel placement uses its supported numeric monitor fallback rather than the reference VM's display serial.
+
+New accounts receive clean shell, terminal, browser and application configuration through `/etc/skel`. Browser settings are seeded through their ordinary preference files once when the account is created. They remain editable afterward. Firefox's profile contains the Biscuit theme and selected preferences; Vivaldi's profile contains selected preferences, an empty bookmark tree and no reference browsing data. Firefox's profile registry uses the installation-directory hash for Debian's `/usr/lib/firefox-esr`, not a user or machine identifier. Its install section is required because [Firefox otherwise creates a new dedicated profile for a seed without compatibility metadata](https://support.mozilla.org/en-US/kb/understanding-depth-profile-installation). Vivaldi's native completed welcome-page preferences initialize the configured browser without reopening its setup wizard. The Vivaldi launcher selects its X11 backend and the supplied persistent horizontal menu stylesheet.
+
+Shell and Nautilus helpers use `/usr/lib/miubomz`. The shell expects ble.sh at `/usr/share/blesh`, Homebrew at `/home/linuxbrew/.linuxbrew`, and the installed mise, easyvenv, Starship and fetch commands. The image build supplies those upstream tools, pinned mise installations, all Fluent theme variants, per-user GNOME extension seeds, mpv/uosc assets, Flatpak applications and qView's AppImage. The cursor name is `fluent-dark`; the separate icon theme is `Fluent-dark`. The account initialization step creates the GTK 4 stylesheet and asset links to the shared Fluent theme after native account creation.
+
+qView is seeded in the user's `AppImages` folder, with its native Gear Lever desktop entry, icon and clean registration. The software initialization step substitutes the selected home directory in the desktop entry and Gear Lever configuration once before first use. This preserves Gear Lever's detection, foreground updates and removal of the application. Its background update preference remains disabled as in the reference.
+
+The package diverts Debian's clean skeleton `.bashrc` while installed and restores it when removed. Existing user homes are not rewritten. Passwordless administration, Timeshift and disk-specific configuration belong to the installer and recovery packages.

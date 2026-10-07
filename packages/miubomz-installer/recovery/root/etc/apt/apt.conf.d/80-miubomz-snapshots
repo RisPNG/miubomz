@@ -1,0 +1,2 @@
+DPkg::Pre-Install-Pkgs { "/usr/lib/miubomz/apt-pre-snapshot"; };
+DPkg::Tools::Options::/usr/lib/miubomz/apt-pre-snapshot::Version "2";

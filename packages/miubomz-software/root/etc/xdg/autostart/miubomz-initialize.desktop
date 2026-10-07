@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Initialize Miubomz account defaults
+Exec=/usr/lib/miubomz/initialize-user
+NoDisplay=true
+X-GNOME-Autostart-Phase=Initialization

@@ -1,0 +1,285 @@
+[com/github/FontManager/FontManager]
+browse-mode='grid'
+browse-pane-position=54.94736842105263
+content-size=39.909638554216869
+hor-content-size=36.0
+hor-sidebar-size=20.0
+mode='manage'
+prefer-dark-theme=true
+preview-background-color='rgb(0,0,0)'
+preview-foreground-color='rgb(255,255,255)'
+sidebar-size=32.94736842105263
+use-adwaita-stylesheet=true
+wide-layout=true
+
+[com/raggesilver/BlackBox]
+floating-controls=false
+font='Noto Mono 12'
+headerbar-drag-area=true
+remember-window-size=true
+show-headerbar=false
+working-directory-mode=uint32 1
+
+[desktop/ibus/panel/emoji]
+hotkey=['<Super>semicolon']
+
+[org/gnome/Console]
+ignore-scrollback-limit=true
+
+[org/gnome/TextEditor]
+highlight-current-line=true
+restore-session=false
+show-line-numbers=true
+show-map=true
+show-right-margin=true
+
+[org/gnome/desktop/interface]
+color-scheme='prefer-dark'
+cursor-theme='fluent-dark'
+document-font-name='Noto Sans 12'
+enable-animations=true
+enable-hot-corners=false
+font-hinting='full'
+font-name='Noto Sans 11'
+gtk-theme='Fluent-round-Dark-compact'
+icon-theme='Fluent-dark'
+monospace-font-name='Noto Mono 11'
+
+[org/gnome/desktop/session]
+idle-delay=uint32 0
+
+[org/gnome/desktop/wm/preferences]
+action-middle-click-titlebar='minimize'
+button-layout='appmenu:minimize,maximize,close'
+
+[org/gnome/mutter]
+edge-tiling=false
+overlay-key='Super_L'
+
+[org/gnome/nautilus/preferences]
+show-delete-permanently=true
+show-image-thumbnails='always'
+
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/desktop-home-tab/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/desktop-terminal-tab/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/desktop-smile/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/desktop-brightness-min/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/desktop-brightness-max/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/desktop-system-monitor/']
+help=@as []
+home=@as []
+www=['<Super>b']
+
+[org/gnome/desktop/peripherals/mouse]
+accel-profile='flat'
+
+[org/gnome/desktop/peripherals/touchpad]
+two-finger-scrolling-enabled=true
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/desktop-brightness-max]
+binding='<Super>equal'
+command='/usr/lib/miubomz/gnome-shortcut-helper brightness 100'
+name='All monitors — brightness 100%'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/desktop-brightness-min]
+binding='<Super>minus'
+command='/usr/lib/miubomz/gnome-shortcut-helper brightness 0'
+name='All monitors — brightness 0%'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/desktop-home-tab]
+binding='<Super>e'
+command='/usr/lib/miubomz/gnome-shortcut-helper files'
+name='Home folder — new tab'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/desktop-smile]
+binding='<Super>period'
+command='/usr/bin/flatpak run it.mijorus.smile'
+name='Smile'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/desktop-system-monitor]
+binding='<Control><Shift>Escape'
+command='/usr/bin/gnome-system-monitor'
+name='System Monitor'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/desktop-terminal-tab]
+binding='<Super>t'
+command='/usr/lib/miubomz/gnome-shortcut-helper terminal'
+name='Default terminal — new tab'
+
+[org/gnome/shell/extensions/appindicator]
+icon-brightness=0.0
+icon-contrast=0.0
+icon-opacity=240
+icon-saturation=0.0
+icon-size=0
+
+[org/gnome/shell/extensions/arcmenu]
+application-shortcuts=[{'id': 'ArcMenu_Software', 'name': 'Software'}, {'id': 'org.gnome.Settings.desktop'}, {'id': 'org.gnome.tweaks.desktop'}, {'id': 'org.gnome.Console.desktop'}, {'id': 'ArcMenu_ActivitiesOverview', 'name': 'Activities Overview', 'icon': 'view-fullscreen-symbolic'}]
+apps-show-extra-details=true
+default-menu-view='All_Programs'
+group-apps-alphabetically-list-layouts=false
+hide-overview-on-startup=true
+highlight-search-result-terms=true
+icon-size-apps=-1
+icon-size-buttons=-1
+icon-size-categories=-1
+icon-size-misc=-1
+icon-size-shortcuts=-1
+left-panel-width=375
+menu-border-radius=20
+menu-border-width=0
+menu-button-icon='resource:///org/gnome/shell/extensions/arcmenu/icons/scalable/actions/distro-debian-symbolic.svg'
+menu-button-icon-size=32
+menu-font-size=12
+menu-height=600
+multi-monitor=true
+override-menu-theme=true
+pinned-apps=@aa{ss} []
+right-panel-width=200
+search-entry-border-radius=(true, 25)
+show-search-result-details=true
+
+[org/gnome/shell/extensions/blur-my-shell]
+rounded-blur-found=false
+settings-version=2
+
+[org/gnome/shell/extensions/blur-my-shell/appfolder]
+brightness=0.59999999999999998
+sigma=30
+
+[org/gnome/shell/extensions/blur-my-shell/applications]
+blacklist=['Plank', 'com.desktop.ding', 'Conky', 'com.rastersoft.ding']
+blur=true
+dynamic-opacity=false
+enable-all=true
+opacity=255
+pipeline='pipeline_default'
+whitelist=['org.gnome.tweaks', 'gnome-tweaks', 'org.gnome.Settings', 'gnome-control-center']
+
+[org/gnome/shell/extensions/blur-my-shell/coverflow-alt-tab]
+pipeline='pipeline_default'
+
+[org/gnome/shell/extensions/blur-my-shell/dash-to-dock]
+blur=true
+brightness=0.59999999999999998
+pipeline='pipeline_default_rounded'
+sigma=30
+static-blur=true
+style-dash-to-dock=0
+
+[org/gnome/shell/extensions/blur-my-shell/lockscreen]
+pipeline='pipeline_default'
+
+[org/gnome/shell/extensions/blur-my-shell/overview]
+pipeline='pipeline_default'
+
+[org/gnome/shell/extensions/blur-my-shell/panel]
+brightness=0.59999999999999998
+corner-radius=0
+pipeline='pipeline_default'
+sigma=30
+
+[org/gnome/shell/extensions/blur-my-shell/screenshot]
+pipeline='pipeline_default'
+
+[org/gnome/shell/extensions/blur-my-shell/window-list]
+brightness=0.59999999999999998
+sigma=30
+
+[org/gnome/shell/extensions/dash-to-panel]
+animate-appicon-hover=true
+animate-appicon-hover-animation-extent={'RIPPLE': 4, 'PLANK': 4, 'SIMPLE': 1}
+animate-appicon-hover-animation-type='RIPPLE'
+appicon-margin=0
+dot-color-dominant=true
+dot-color-override=false
+dot-position='RIGHT'
+dot-style-focused='SEGMENTED'
+dot-style-unfocused='DASHES'
+focus-highlight-dominant=true
+focus-highlight-opacity=15
+global-border-radius=4
+hide-overview-on-startup=true
+hot-keys=true
+hotkeys-overlay-combo='TEMPORARILY'
+isolate-monitors=true
+isolate-workspaces=true
+leftbox-padding=2
+leftbox-size=16
+overview-click-to-exit=true
+panel-anchors='{"0":"MIDDLE"}'
+panel-element-positions='{"0":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'
+panel-lengths='{}'
+panel-positions='{}'
+panel-sizes='{}'
+progress-show-count=false
+secondarymenu-contains-showdetails=true
+show-apps-icon-file=''
+status-icon-padding=2
+stockgs-panelbtn-click-only=true
+trans-panel-opacity=0.90000000000000002
+trans-use-custom-bg=false
+trans-use-custom-opacity=true
+trans-use-dynamic-opacity=false
+tray-padding=2
+tray-size=16
+window-preview-title-position='TOP'
+
+[org/gnome/shell/extensions/ding]
+show-network-volumes=true
+
+[org/gnome/shell/extensions/forcequit]
+hide-button=false
+
+[org/gnome/shell/extensions/just-perfection]
+startup-status=0
+window-demands-attention-focus=true
+
+[org/gnome/shell/extensions/tiling-assistant]
+activate-layout0=@as []
+activate-layout1=@as []
+activate-layout2=@as []
+activate-layout3=@as []
+auto-tile=@as []
+center-window=@as []
+debugging-free-rects=@as []
+debugging-show-tiled-rects=@as []
+default-move-mode=0
+dynamic-keybinding-behavior=0
+focus-hint=0
+focus-hint-color='rgb(53,132,228)'
+import-layout-examples=false
+restore-window=@as []
+search-popup-layout=@as []
+tile-bottom-half=@as []
+tile-bottom-half-ignore-ta=@as []
+tile-bottomleft-quarter=@as []
+tile-bottomleft-quarter-ignore-ta=@as []
+tile-bottomright-quarter=@as []
+tile-bottomright-quarter-ignore-ta=@as []
+tile-edit-mode=@as []
+tile-left-half=@as []
+tile-left-half-ignore-ta=@as []
+tile-maximize=@as []
+tile-maximize-horizontally=@as []
+tile-maximize-vertically=@as []
+tile-right-half=@as []
+tile-right-half-ignore-ta=@as []
+tile-top-half=@as []
+tile-top-half-ignore-ta=@as []
+tile-topleft-quarter=@as []
+tile-topleft-quarter-ignore-ta=@as []
+tile-topright-quarter=@as []
+tile-topright-quarter-ignore-ta=@as []
+toggle-always-on-top=@as []
+toggle-tiling-popup=@as []
+
+[org/gnome/shell]
+disabled-extensions=['apps-menu@gnome-shell-extensions.gcampax.github.com']
+enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'arcmenu@arcmenu.com', 'color-picker@tuberry', 'lockkeys@vaina.lt', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'smile-extension@mijorus.it', 'just-perfection-desktop@just-perfection', 'tiling-assistant@leleat-on-github', 'window-on-top@yousafesaeed.github.io', 'fq@megh', 'dash-to-panel@jderose9.github.com', 'blur-my-shell@aunetx', 'ding@rastersoft.com']
+favorite-apps=@as []
+
+[org/gnome/desktop/input-sources]
+show-all-sources=true
+
+[org/gtk/settings/file-chooser]
+show-hidden=true
+
+[org/gtk/gtk4/settings/file-chooser]
+show-hidden=true

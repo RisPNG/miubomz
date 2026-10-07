@@ -1,0 +1,11 @@
+Package: miubomz-recovery
+Version: 0.1.0
+Architecture: all
+Maintainer: Miubomz
+Section: admin
+Priority: optional
+Depends: timeshift, btrfs-progs, inotify-tools, overlayroot, initramfs-tools, cron, systemd-zram-generator, grub-common, grub2-common, grub-pc-bin, grub-efi-amd64-bin, util-linux, python3, sudo, polkitd, init-system-helpers
+Conflicts: grub-btrfs
+Description: Native system recovery and administrator defaults for Miubomz
+ Integrates Timeshift, grub-btrfs 4.14, overlayroot, APT snapshots and zram
+ with the Miubomz Btrfs installation layout.

@@ -1,0 +1,13 @@
+amd64-microcode
+intel-microcode
+bluez-firmware
+firmware-amd-graphics
+firmware-atheros
+firmware-brcm80211
+firmware-intel-graphics
+firmware-intel-sound
+firmware-iwlwifi
+firmware-mediatek
+firmware-misc-nonfree
+firmware-realtek
+firmware-sof-signed

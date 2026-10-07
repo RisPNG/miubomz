@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+case "$1" in
+    install|upgrade)
+        dpkg-divert --package miubomz-desktop --add --rename \
+            --divert /etc/skel/.bashrc.debian /etc/skel/.bashrc
+        ;;
+esac

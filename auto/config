@@ -1,0 +1,42 @@
+#!/bin/sh
+set -eu
+
+debian_mirror=${MIUBOMZ_DEBIAN_MIRROR:-http://deb.debian.org/debian}
+
+lb config noauto \
+    --ignore-system-defaults \
+    --mode debian \
+    --distribution forky \
+    --architectures amd64 \
+    --archive-areas "${MIUBOMZ_ARCHIVE_AREAS:-main non-free-firmware}" \
+    --mirror-bootstrap "$debian_mirror" \
+    --mirror-chroot "$debian_mirror" \
+    --mirror-binary http://deb.debian.org/debian \
+    --apt-recommends false \
+    --apt-options "--yes --allow-downgrades -o Acquire::Retries=5" \
+    --apt-indices true \
+    --apt-secure true \
+    --debian-installer none \
+    --binary-image iso-hybrid \
+    --bootloaders "syslinux grub-efi" \
+    --bootappend-live "boot=live components plymouth.enable=0 overlay-size=90% username=miubomz hostname=miubomz locales=en_US.UTF-8 keyboard-layouts=us" \
+    --linux-flavours amd64 \
+    --linux-packages "linux-image linux-headers" \
+    --firmware-binary false \
+    --firmware-chroot false \
+    --security false \
+    --updates false \
+    --backports false \
+    --memtest none \
+    --win32-loader false \
+    --checksums sha256 \
+    --iso-application "Miubomz Live 0.1.0" \
+    --iso-preparer Miubomz \
+    --iso-publisher Miubomz \
+    --iso-volume MIUBOMZ_0_1_0_AMD64 \
+    --chroot-squashfs-compression-type zstd \
+    --chroot-squashfs-compression-level 6 \
+    --cache true \
+    --cache-packages true \
+    --cache-indices false \
+    "$@"
