@@ -1,0 +1,18 @@
+#!/bin/sh
+set -eu
+
+glib-compile-schemas /usr/share/glib-2.0/schemas
+dconf update
+update-desktop-database /usr/share/applications
+fc-cache -f
+test "$(. /etc/os-release; printf '%s' "$ID")" = debian
+test -x /usr/bin/calamares
+test -x /usr/bin/gnome-shell
+test ! -e /usr/share/applications/chatgpt.desktop
+
+rm -f /etc/apt/preferences.d/locked-inputs.pref /etc/apt/preferences.d/locked-inputs.pref.orig
+
+truncate -s 0 /etc/machine-id
+ln -sf /etc/machine-id /var/lib/dbus/machine-id
+rm -f /var/lib/systemd/random-seed /etc/ssh/ssh_host_*_key /etc/ssh/ssh_host_*_key.pub
+find /var/log -type f -exec truncate -s 0 {} +

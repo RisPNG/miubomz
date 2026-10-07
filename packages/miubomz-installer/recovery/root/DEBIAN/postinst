@@ -1,6 +1,0 @@
-#!/bin/sh
-set -eu
-if [ "$1" = configure ] && [ -z "${2-}" ]; then
-    deb-systemd-helper enable miubomz-recovery-start.service >/dev/null
-    deb-systemd-helper enable grub-btrfsd.service >/dev/null
-fi

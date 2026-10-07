@@ -1,0 +1,6 @@
+btrfs-progs
+cryptsetup-initramfs
+efibootmgr
+overlayroot
+systemd-zram-generator
+timeshift

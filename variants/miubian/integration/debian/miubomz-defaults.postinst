@@ -1,0 +1,13 @@
+#!/bin/sh
+set -eu
+
+case "$1" in
+    configure)
+        dconf update
+        update-desktop-database /usr/share/applications
+        update-alternatives --set x-terminal-emulator /usr/bin/kgx
+        update-alternatives --set editor /usr/bin/mcedit
+        ;;
+esac
+
+#DEBHELPER#

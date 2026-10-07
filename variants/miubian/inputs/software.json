@@ -1,0 +1,353 @@
+{
+  "schema": 1,
+  "architecture": "amd64",
+  "bundle": {
+    "path": "artifacts/miubian/inputs/miubian-inputs-fbee40824a347c7c71e28d98c5514c31b5ec01a2fe3c3420aef5bfc882bf2ab5.tar.zst",
+    "sha256": "fbee40824a347c7c71e28d98c5514c31b5ec01a2fe3c3420aef5bfc882bf2ab5",
+    "bytes": 8056266473
+  },
+  "assets": [
+    {
+      "destination": "usr/share/themes",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "home/miubomz/.themes"
+      }
+    },
+    {
+      "destination": "usr/share/icons",
+      "provenance": {
+        "kind": "archived-export",
+        "original_paths": [
+          "home/miubomz/.local/share/icons",
+          "home/miubomz/.icons/fluent",
+          "home/miubomz/.icons/fluent-dark"
+        ]
+      }
+    },
+    {
+      "destination": "etc/skel/.local/share/gnome-shell/extensions",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "home/miubomz/.local/share/gnome-shell/extensions"
+      }
+    },
+    {
+      "destination": "usr/share/blesh",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "home/miubomz/.local/share/blesh"
+      }
+    },
+    {
+      "destination": "usr/bin/mise",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "home/miubomz/.local/bin/mise"
+      }
+    },
+    {
+      "destination": "usr/bin/easyvenv",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "home/miubomz/.local/bin/easyvenv"
+      }
+    },
+    {
+      "destination": "usr/bin/venv",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "home/miubomz/.local/bin/venv"
+      }
+    },
+    {
+      "destination": "usr/bin/starship",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "usr/local/bin/starship"
+      }
+    },
+    {
+      "destination": "usr/bin/pacstall",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "usr/bin/pacstall"
+      }
+    },
+    {
+      "destination": "usr/share/pacstall",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "usr/share/pacstall"
+      }
+    },
+    {
+      "destination": "home/linuxbrew/.linuxbrew",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "home/linuxbrew/.linuxbrew"
+      }
+    },
+    {
+      "destination": "etc/skel/.local/share/mise/installs",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "home/miubomz/.local/share/mise/installs"
+      }
+    },
+    {
+      "destination": "etc/skel/.cargo/bin",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "home/miubomz/.cargo/bin"
+      }
+    },
+    {
+      "destination": "etc/skel/.rustup/toolchains",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "home/miubomz/.rustup/toolchains"
+      }
+    },
+    {
+      "destination": "etc/skel/AppImages/qview.appimage",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "home/miubomz/AppImages/qview.appimage"
+      }
+    },
+    {
+      "destination": "var/lib/pacstall/metadata/fetch-git",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "var/lib/pacstall/metadata/fetch-git"
+      }
+    },
+    {
+      "destination": "etc/skel/.config/mpv/scripts",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "home/miubomz/.config/mpv/scripts"
+      }
+    },
+    {
+      "destination": "etc/skel/.config/mpv/fonts",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "home/miubomz/.config/mpv/fonts"
+      }
+    },
+    {
+      "destination": "etc/skel/.config/mpv/script-opts",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "home/miubomz/.config/mpv/script-opts"
+      }
+    },
+    {
+      "destination": "var/lib/flatpak",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "var/lib/flatpak"
+      }
+    },
+    {
+      "destination": "usr/share/keyrings/microsoft.gpg",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "usr/share/keyrings/microsoft.gpg"
+      }
+    },
+    {
+      "destination": "usr/share/keyrings/vivaldi-16BD9233.gpg",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "usr/share/keyrings/vivaldi-16BD9233.gpg"
+      }
+    },
+    {
+      "destination": "etc/apt/sources.list.d/vscode.sources",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "etc/apt/sources.list.d/vscode.sources"
+      }
+    },
+    {
+      "destination": "etc/apt/sources.list.d/vivaldi.sources",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "etc/apt/sources.list.d/vivaldi.sources"
+      }
+    },
+    {
+      "destination": "etc/skel/.cache/mise/python/pyenv",
+      "provenance": {
+        "kind": "archived-export",
+        "original_path": "home/miubomz/.cache/mise/python/pyenv"
+      }
+    }
+  ],
+  "flatpak_remote": {
+    "name": "flathub",
+    "url": "https://dl.flathub.org/repo/",
+    "descriptor_url": "https://dl.flathub.org/repo/flathub.flatpakrepo"
+  },
+  "flatpak_applications": [
+    "app/com.mattjakeman.ExtensionManager/x86_64/stable",
+    "app/com.raggesilver.BlackBox/x86_64/stable",
+    "app/io.github.Qalculate/x86_64/stable",
+    "app/io.github.flattool.Warehouse/x86_64/stable",
+    "app/it.mijorus.gearlever/x86_64/stable",
+    "app/it.mijorus.smile/x86_64/stable",
+    "app/org.gnome.Boxes/x86_64/stable",
+    "app/org.gnome.Evince/x86_64/stable",
+    "app/org.gnome.Snapshot/x86_64/stable",
+    "app/org.gnome.SoundRecorder/x86_64/stable",
+    "app/org.gnome.meld/x86_64/stable",
+    "app/org.gnome.seahorse.Application/x86_64/stable",
+    "app/org.libreoffice.LibreOffice/x86_64/stable",
+    "app/org.nickvision.tubeconverter/x86_64/stable",
+    "app/org.nomacs.ImageLounge/x86_64/stable",
+    "app/org.pgadmin.pgadmin4/x86_64/stable",
+    "app/org.qbittorrent.qBittorrent/x86_64/stable",
+    "app/org.remmina.Remmina/x86_64/stable"
+  ],
+  "flatpak_runtimes": [
+    "runtime/org.freedesktop.Platform/x86_64/25.08",
+    "runtime/org.freedesktop.Platform.GL.default/x86_64/25.08",
+    "runtime/org.freedesktop.Platform.GL.default/x86_64/25.08-extra",
+    "runtime/org.freedesktop.Platform.GL.default/x86_64/26.08",
+    "runtime/org.freedesktop.Platform.GL.default/x86_64/26.08-extra",
+    "runtime/org.freedesktop.Platform.codecs-extra/x86_64/25.08-extra",
+    "runtime/org.freedesktop.Platform.codecs-extra/x86_64/26.08-extra",
+    "runtime/org.gnome.Boxes.Extension.OsinfoDb/x86_64/stable",
+    "runtime/org.gnome.Platform/x86_64/49",
+    "runtime/org.gnome.Platform/x86_64/50",
+    "runtime/org.gnome.Platform/x86_64/51",
+    "runtime/org.kde.Platform/x86_64/6.10",
+    "runtime/org.kde.Platform/x86_64/6.11"
+  ],
+  "gnome_extensions": [
+    {
+      "uuid": "appindicatorsupport@rgcjonas.gmail.com",
+      "version": 66,
+      "upstream": "https://github.com/ubuntu/gnome-shell-extension-appindicator"
+    },
+    {
+      "uuid": "arcmenu@arcmenu.com",
+      "version": 74,
+      "upstream": "https://gitlab.com/arcmenu/ArcMenu"
+    },
+    {
+      "uuid": "blur-my-shell@aunetx",
+      "version": 72,
+      "upstream": "https://github.com/aunetx/blur-my-shell"
+    },
+    {
+      "uuid": "color-picker@tuberry",
+      "version": 49,
+      "upstream": "https://github.com/tuberry/color-picker"
+    },
+    {
+      "uuid": "dash-to-panel@jderose9.github.com",
+      "version": 74,
+      "upstream": "https://github.com/home-sweet-gnome/dash-to-panel"
+    },
+    {
+      "uuid": "ding@rastersoft.com",
+      "version": 99,
+      "upstream": "https://gitlab.com/rastersoft/desktop-icons-ng"
+    },
+    {
+      "uuid": "drive-menu@gnome-shell-extensions.gcampax.github.com",
+      "version": 82,
+      "upstream": "https://gitlab.gnome.org/GNOME/gnome-shell-extensions"
+    },
+    {
+      "uuid": "fq@megh",
+      "version": 47,
+      "upstream": "https://github.com/meghprkh/force-quit/"
+    },
+    {
+      "uuid": "just-perfection-desktop@just-perfection",
+      "version": 37,
+      "upstream": "https://gitlab.gnome.org/jrahmatzadeh/just-perfection"
+    },
+    {
+      "uuid": "lockkeys@vaina.lt",
+      "version": 72,
+      "upstream": "https://github.com/kazysmaster/gnome-shell-extension-lockkeys"
+    },
+    {
+      "uuid": "smile-extension@mijorus.it",
+      "version": 13,
+      "upstream": "https://github.com/mijorus/smile-gnome-extension"
+    },
+    {
+      "uuid": "tiling-assistant@leleat-on-github",
+      "version": 55,
+      "upstream": "https://github.com/ubuntu/Tiling-Assistant"
+    },
+    {
+      "uuid": "window-on-top@yousafesaeed.github.io",
+      "version": 9,
+      "upstream": "https://github.com/uosyph/window-on-top"
+    }
+  ],
+  "mise_installed": {
+    "go": [
+      "1.27.1"
+    ],
+    "java": [
+      "27.0.0"
+    ],
+    "node": [
+      "26.10.0"
+    ],
+    "python": [
+      "3.10.22",
+      "3.11.17"
+    ],
+    "rust": [
+      "1.99.0"
+    ]
+  },
+  "mise_pyenv_commit": "f9d17bfc06ccbda37edd84df99a4f50d8d7d2a4a",
+  "homebrew_cellar": {
+    "binutils": [
+      "2.47"
+    ],
+    "gcc": [
+      "16.2.0"
+    ],
+    "gmp": [
+      "6.3.0"
+    ],
+    "isl": [
+      "0.28"
+    ],
+    "libmpc": [
+      "1.4.1"
+    ],
+    "lz4": [
+      "1.10.0"
+    ],
+    "mpfr": [
+      "4.2.2"
+    ],
+    "xz": [
+      "5.8.4"
+    ],
+    "zlib-ng-compat": [
+      "2.3.3_1"
+    ],
+    "zstd": [
+      "1.5.7_1"
+    ]
+  },
+  "staging_excludes": [
+    "etc/skel/.config/mise/config.toml",
+    "etc/skel/.rustup/settings.toml",
+    "root"
+  ]
+}

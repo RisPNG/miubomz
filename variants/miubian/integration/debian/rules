@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --with python3
+
+override_dh_installsystemd:
+	dh_installsystemd --no-start
+
+override_dh_strip_nondeterminism:
+	dh_strip_nondeterminism -X.png -X.xpi
+
+execute_after_dh_fixperms:
+	chmod 0700 debian/miubomz-defaults/root
+	chmod 0440 debian/miubomz-defaults/etc/sudoers.d/99-miubomz-admin
+	chmod 0755 debian/miubomz-defaults/usr/lib/miubomz/initialize-user \
+		debian/miubomz-defaults/usr/lib/miubomz/gnome-shortcut-helper \
+		debian/miubomz-defaults/usr/lib/miubomz/nautilus-actions.py \
+		debian/miubomz-defaults/usr/lib/miubomz/deduplicate-history.py \
+		debian/miubomz-recovery/usr/lib/miubomz/apt-pre-snapshot \
+		debian/miubomz-recovery/usr/lib/miubomz/recovery-start \
+		debian/miubomz-recovery/etc/grub.d/41_snapshots-btrfs \
+		debian/miubomz-live-settings/usr/lib/live/config/0950-miubomz-software

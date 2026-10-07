@@ -1,0 +1,34 @@
+Miubomz-owned configuration and integration:
+Copyright (c) 2026 NIK FARIS AIMAN BIN NIK RAHIMAN
+
+BSD Zero Clause License
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+
+Debian Calamares settings and branding originate from
+https://salsa.debian.org/live-team/calamares-settings-debian/-/tree/14.0.2
+Copyright (c) 2016-2024 Jonathan Carter <jcc@debian.org>
+ISC license; the complete notice is retained in
+vendor/calamares-settings-debian/Debian.COPYING and shipped in the installer
+package's documentation directory.
+
+grub-btrfs originates from https://github.com/Antynea/grub-btrfs/tree/v4.14
+and retains its upstream copyright notices in vendor/grub-btrfs/.
+GNU General Public License version 3; the complete license is retained in
+vendor/grub-btrfs/grub-btrfs.LICENSE and shipped in the recovery package's
+documentation directory. Debian also supplies the license at
+/usr/share/common-licenses/GPL-3.
+
+The Firefox Biscuit {Mojas84} theme retains its signed upstream archive and
+embedded identity in defaults/applications/firefox/miubomz.default-esr/extensions/.
+Third-party artifacts retain their upstream notices and are not relicensed
+as Miubomz-owned configuration.

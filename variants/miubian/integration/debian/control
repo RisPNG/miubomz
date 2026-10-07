@@ -1,0 +1,51 @@
+Source: miubomz-settings
+Section: admin
+Priority: optional
+Maintainer: Miubomz <miubomz@localhost>
+Build-Depends: debhelper-compat (= 13), dh-python, python3
+Standards-Version: 4.7.2
+Rules-Requires-Root: no
+Homepage: https://github.com/RisPNG/miubomz
+
+Package: miubomz-defaults
+Architecture: all
+Depends: ${misc:Depends}, bash, dconf-cli, gnome-shell, gnome-console, nautilus,
+ python3, python3-gi, gir1.2-gtk-4.0, gir1.2-glib-2.0, xdg-terminal-exec,
+ blackbox-terminal, mc, util-linux, zenity, wl-clipboard, xclip, ddcutil,
+ desktop-file-utils, systemd-zram-generator, sudo, polkitd
+Conflicts: miubomz-desktop, miubomz-software
+Breaks: miubomz-recovery (<< 0.2.0)
+Replaces: miubomz-desktop, miubomz-software, miubomz-recovery (<< 0.2.0)
+Description: Miubomz desktop, account and system defaults
+ Provides editable GNOME and application preferences, shell configuration,
+ account initialization, administrator policy and compressed RAM swap.
+
+Package: miubomz-recovery
+Architecture: all
+Depends: ${misc:Depends}, timeshift, btrfs-progs, inotify-tools, overlayroot,
+ initramfs-tools, cron, grub-common, grub2-common, grub-pc-bin,
+ grub-efi-amd64-bin, util-linux, python3
+Conflicts: grub-btrfs
+Description: Miubomz Btrfs system recovery integration
+ Integrates Timeshift, grub-btrfs 4.14, overlayroot and APT transaction
+ snapshots with the installed Btrfs subvolume layout.
+
+Package: miubomz-installer
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}, calamares (>= 3.4),
+ miubomz-defaults (= ${binary:Version}), miubomz-recovery (= ${binary:Version}),
+ sudo, x11-xserver-utils, grub-pc-bin, grub-efi-amd64-bin, grub2-common,
+ efibootmgr, cryptsetup-initramfs, keyutils, os-prober
+Provides: calamares-settings
+Conflicts: calamares-settings-debian
+Replaces: calamares-settings-debian
+Description: Miubomz Calamares live installer settings
+ Configures the native Debian live-install workflow, offline bootloader
+ setup and Btrfs layout. Removed from the installed system.
+
+Package: miubomz-live-settings
+Architecture: all
+Depends: ${misc:Depends}, live-config, miubomz-defaults (= ${binary:Version})
+Description: Miubomz live-session account settings
+ Initializes the live account with the installed desktop defaults and
+ assigns ownership of the supplied development tools. Removed on installation.

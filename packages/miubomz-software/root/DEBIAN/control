@@ -1,8 +1,0 @@
-Package: miubomz-software
-Version: 0.1.0
-Architecture: all
-Maintainer: Miubomz
-Depends: python3, util-linux, desktop-file-utils
-Description: Miubomz first-account desktop and development initialization
- Initializes desktop themes, development tool defaults and AppImage integration
- for new accounts using their selected home directory.

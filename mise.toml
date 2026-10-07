@@ -1,7 +1,19 @@
 [tasks.build]
-description = "Build Miubomz 0.1.0 using native Debian live-build"
-run = "bash scripts/build.sh"
+description = "Build Miubian using its locked inputs and native Debian live-build"
+run = "bash variants/miubian/build/build.sh"
 
 [tasks.clean]
 description = "Clean generated live-build state while preserving downloads and release artifacts"
-run = "bash scripts/clean.sh"
+run = "bash variants/miubian/build/clean.sh"
+
+[tasks.test]
+description = "Check Miubian integration and input contracts"
+run = "python3 -m unittest discover -s variants/miubian/tests/integration -p 'test_*.py'"
+
+[tasks.qa]
+description = "Operate a disposable Miubian VM for boot and installation checks"
+run = "python3 variants/miubian/tests/vm/qa-install.py"
+
+[tasks.export-inputs]
+description = "Export verified cached Miubian inputs as an immutable bundle"
+run = "sudo -n python3 variants/miubian/build/export-inputs.py"

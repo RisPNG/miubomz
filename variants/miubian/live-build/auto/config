@@ -1,0 +1,51 @@
+#!/bin/sh
+set -eu
+
+debian_mirror=${MIUBOMZ_DEBIAN_MIRROR:-https://deb.debian.org/debian}
+profile_dir=${MIUBOMZ_PROFILE:-$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)}
+cache_dir=$(realpath -m -- "${MIUBOMZ_CACHE_DIR:-$profile_dir/../../.cache/miubian}")
+version=$(jq -r .version "$profile_dir/release.json")
+architecture=$(jq -r .architecture "$profile_dir/release.json")
+distribution=$(jq -r .distribution "$profile_dir/release.json")
+volume=$(printf 'MIUBOMZ_%s_%s' "$version" "$architecture" | tr '.abcdefghijklmnopqrstuvwxyz' '_ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+
+lb config noauto \
+    --ignore-system-defaults \
+    --mode debian \
+    --distribution "$distribution" \
+    --architectures "$architecture" \
+    --archive-areas "${MIUBOMZ_ARCHIVE_AREAS:-main non-free-firmware}" \
+    --mirror-bootstrap "$debian_mirror" \
+    --mirror-chroot "$debian_mirror" \
+    --mirror-binary https://deb.debian.org/debian \
+    --debootstrap-options "--cache-dir=$cache_dir/bootstrap" \
+    --apt-recommends false \
+    --apt-options "--yes --allow-downgrades -o Acquire::Retries=5" \
+    --apt-indices true \
+    --apt-secure true \
+    --debian-installer none \
+    --binary-image iso-hybrid \
+    --build-with-chroot false \
+    --bootloaders "syslinux grub-efi" \
+    --uefi-secure-boot disable \
+    --bootappend-live "boot=live components plymouth.enable=0 overlay-size=90% username=miubomz hostname=miubomz locales=en_US.UTF-8 keyboard-layouts=us" \
+    --linux-flavours amd64 \
+    --linux-packages "linux-image linux-headers" \
+    --firmware-binary false \
+    --firmware-chroot false \
+    --security false \
+    --updates false \
+    --backports false \
+    --memtest none \
+    --win32-loader false \
+    --checksums sha256 \
+    --iso-application "Miubian Live $version" \
+    --iso-preparer Miubomz \
+    --iso-publisher Miubomz \
+    --iso-volume "$volume" \
+    --chroot-squashfs-compression-type zstd \
+    --chroot-squashfs-compression-level 6 \
+    --cache true \
+    --cache-packages true \
+    --cache-indices false \
+    "$@"

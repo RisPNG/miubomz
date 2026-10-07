@@ -1,8 +1,0 @@
-#!/bin/sh
-set -eu
-case "$1" in
-    remove|purge|abort-install)
-        dpkg-divert --package miubomz-desktop --remove --rename \
-            --divert /etc/skel/.bashrc.debian /etc/skel/.bashrc
-        ;;
-esac

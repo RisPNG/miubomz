@@ -1,0 +1,71 @@
+#!/usr/bin/python3
+"""Initialize the desktop and development seed for the selected account once."""
+
+import configparser
+import hashlib
+import os
+from pathlib import Path
+import pwd
+import subprocess
+import sys
+
+
+account = pwd.getpwnam(sys.argv[1]) if len(sys.argv) > 1 else pwd.getpwuid(os.getuid())
+home = Path(account.pw_dir)
+stamp = home / ".local/state/miubomz/initialized-0.1.0"
+if stamp.exists():
+    raise SystemExit(0)
+
+bashrc = home / ".bashrc"
+if not bashrc.exists() or bashrc.read_bytes() == Path("/etc/skel/.bashrc").read_bytes():
+    bashrc.write_bytes(Path("/usr/share/miubomz/skel/.bashrc").read_bytes())
+    if os.geteuid() == 0:
+        os.chown(bashrc, account.pw_uid, account.pw_gid)
+
+gtk = home / ".config/gtk-4.0"
+gtk.mkdir(parents=True, exist_ok=True)
+for name in ("assets", "gtk.css", "gtk-dark.css"):
+    link = gtk / name
+    if not os.path.lexists(link):
+        link.symlink_to("/usr/share/themes/Fluent-round-Dark-compact/gtk-4.0/" + name)
+        if os.geteuid() == 0:
+            os.lchown(link, account.pw_uid, account.pw_gid)
+if os.geteuid() == 0:
+    os.chown(gtk, account.pw_uid, account.pw_gid)
+
+tools = home / ".local/share/mise/installs"
+paths = list(tools.rglob("*"))
+paths.append(home / ".var/app/it.mijorus.gearlever/config/gearlever.conf")
+paths.append(home / ".local/share/applications/qview.desktop")
+for path in paths:
+    if path.is_symlink() or not path.is_file() or path.stat().st_size > 1024 * 1024:
+        continue
+    content = path.read_bytes()
+    if b"\0" not in content and b"/home/miubomz/" in content:
+        path.write_bytes(content.replace(b"/home/miubomz/", os.fsencode(home) + b"/"))
+
+gearlever = home / ".var/app/it.mijorus.gearlever/config/gearlever.conf"
+if gearlever.exists():
+    settings = configparser.ConfigParser(interpolation=None)
+    settings.read(gearlever)
+    for section in settings.sections():
+        if section.startswith("app.") and settings.has_option(section, "file_path"):
+            key = "app." + hashlib.md5(os.fsencode(settings[section]["file_path"])).hexdigest()
+            if key != section:
+                settings[key] = dict(settings[section])
+                settings.remove_section(section)
+    with gearlever.open("w") as stream:
+        settings.write(stream)
+subprocess.run(["update-desktop-database", str(home / ".local/share/applications")], check=True)
+
+environment = ["env", "HOME=" + str(home), "XDG_DATA_HOME=" + str(home / ".local/share"),
+               "XDG_CONFIG_HOME=" + str(home / ".config"), "/usr/bin/mise", "reshim"]
+if os.geteuid() == 0:
+    subprocess.run(["/usr/sbin/runuser", "-u", account.pw_name, "--", *environment], check=True)
+else:
+    subprocess.run(environment, check=True)
+stamp.parent.mkdir(parents=True, exist_ok=True)
+stamp.touch()
+if os.geteuid() == 0:
+    for path in (stamp.parent.parent, stamp.parent, stamp):
+        os.chown(path, account.pw_uid, account.pw_gid)

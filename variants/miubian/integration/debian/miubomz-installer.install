@@ -1,0 +1,14 @@
+installer/calamares/settings.conf etc/calamares
+installer/calamares/branding etc/calamares
+installer/calamares/modules/*.conf etc/calamares/modules
+installer/calamares/modules/bootloader-config usr/lib/calamares/modules
+installer/calamares/modules/dpkg-unsafe-io usr/lib/calamares/modules
+installer/calamares/modules/dpkg-unsafe-io-undo usr/lib/calamares/modules
+installer/calamares/modules/miubomz-target usr/lib/calamares/modules
+installer/calamares/modules/sources-media usr/lib/calamares/modules
+installer/calamares/modules/sources-media-unmount usr/lib/calamares/modules
+installer/calamares/modules/sources-final usr/lib/calamares/modules
+installer/calamares/miubomz_installer.py usr/lib/python3/dist-packages
+installer/calamares/launcher/calamares-install-miubomz usr/bin
+installer/calamares/launcher/calamares-install-miubomz.desktop usr/share/applications
+installer/calamares/launcher/install-debian.png usr/share/icons/hicolor/48x48/apps

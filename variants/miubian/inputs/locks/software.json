@@ -1,0 +1,419 @@
+{
+  "payload": {
+    "sha256": "a89af391f82d6e661ae6aa5f419553133a32426b5db7e9ac79bf2c766a37bc74",
+    "files": 441621,
+    "modes_sha256": "a4da631e4df1b9af0c1012b41390970eb9807e046c75d82ddd725c3b8e75ef23"
+  },
+  "flatpaks": [
+    {
+      "ref": "app/com.mattjakeman.ExtensionManager/x86_64/stable",
+      "origin": "flathub",
+      "commit": "258d01400a2f718423e3a1da19d9fc6e2e12da219750937b547ba1ae346c4d74",
+      "version": "0.6.5"
+    },
+    {
+      "ref": "app/com.raggesilver.BlackBox/x86_64/stable",
+      "origin": "flathub",
+      "commit": "a3642e747cc3fe0f2c73e68f22205197b66259e0a417c30ccab0b251dd579680",
+      "version": "0.14.0"
+    },
+    {
+      "ref": "app/io.github.Qalculate/x86_64/stable",
+      "origin": "flathub",
+      "commit": "5280aeceed2e02b45abf92ab09dab44f7fd52be783ba42645eccefa358d24010",
+      "version": "5.12.0"
+    },
+    {
+      "ref": "app/io.github.flattool.Warehouse/x86_64/stable",
+      "origin": "flathub",
+      "commit": "9091b88e97e94d72540d65ad6840f73a8157683a9b79906f2e2a575d83f7bc46",
+      "version": "2.2.0"
+    },
+    {
+      "ref": "app/it.mijorus.gearlever/x86_64/stable",
+      "origin": "flathub",
+      "commit": "3cb51600bc734bd87fb498663b57bfb02530610aeeffe13804a8bbb6c805d3cc",
+      "version": "4.6.2"
+    },
+    {
+      "ref": "app/it.mijorus.smile/x86_64/stable",
+      "origin": "flathub",
+      "commit": "4cd97f81d7d5004e389924c88bd9ed37ff2589a2857f0f371cced07e17719c1f",
+      "version": "2.12.2"
+    },
+    {
+      "ref": "runtime/org.freedesktop.Platform/x86_64/25.08",
+      "origin": "flathub",
+      "commit": "d27f7a6a974e40b061070bec1be9e1b52a7a6872b271e6a45c2c34a48bf6fedf",
+      "version": "freedesktop-sdk-25.08.17"
+    },
+    {
+      "ref": "runtime/org.freedesktop.Platform.GL.default/x86_64/25.08",
+      "origin": "flathub",
+      "commit": "0083f33e9a33c454d0f0850d06581e5f991ecf2dbde02e38079db49e01c7ebac",
+      "version": "26.2.2"
+    },
+    {
+      "ref": "runtime/org.freedesktop.Platform.GL.default/x86_64/25.08-extra",
+      "origin": "flathub",
+      "commit": "695a049fc6520a9c8041cbdb35df59f9d38b562b02c6316a36fb2deb50a0992b",
+      "version": "26.2.2"
+    },
+    {
+      "ref": "runtime/org.freedesktop.Platform.GL.default/x86_64/26.08",
+      "origin": "flathub",
+      "commit": "badc1097c419e73781cf098413ffa8e7bf7db3528572c11712265b9193921842",
+      "version": "26.2.2"
+    },
+    {
+      "ref": "runtime/org.freedesktop.Platform.GL.default/x86_64/26.08-extra",
+      "origin": "flathub",
+      "commit": "78bffb38496d50460493f1c19382be4e6a53fd7f90c82ea6339c26c33d46f272",
+      "version": "26.2.2"
+    },
+    {
+      "ref": "runtime/org.freedesktop.Platform.codecs-extra/x86_64/25.08-extra",
+      "origin": "flathub",
+      "commit": "7ccd63f7532e93ce345b67dedc492748bba449917e81a031502715bc38e3f438",
+      "version": ""
+    },
+    {
+      "ref": "runtime/org.freedesktop.Platform.codecs-extra/x86_64/26.08-extra",
+      "origin": "flathub",
+      "commit": "c39642255da41e44561bb095bcfad5ae86b003822c009eb5eb0d1c8d31ebc93e",
+      "version": ""
+    },
+    {
+      "ref": "app/org.gnome.Boxes/x86_64/stable",
+      "origin": "flathub",
+      "commit": "476600abc122ef11ed4ec4cf880465e3834449447188e29db1a3c91e66abf47f",
+      "version": "50.0"
+    },
+    {
+      "ref": "runtime/org.gnome.Boxes.Extension.OsinfoDb/x86_64/stable",
+      "origin": "flathub",
+      "commit": "87fe908d77df18b5531257a84d836e37d0438d530af6e06000c52feb24901814",
+      "version": "20251212"
+    },
+    {
+      "ref": "app/org.gnome.Evince/x86_64/stable",
+      "origin": "flathub",
+      "commit": "9f0403ef260ec7a60409742bc04348dc5d636cb7781ca03b589594e3437855ed",
+      "version": "48.4"
+    },
+    {
+      "ref": "runtime/org.gnome.Platform/x86_64/49",
+      "origin": "flathub",
+      "commit": "2bb946ea4ebb050f6a32f90e979feb975b08280d1ff1aac881dec3d1361ad84d",
+      "version": ""
+    },
+    {
+      "ref": "runtime/org.gnome.Platform/x86_64/50",
+      "origin": "flathub",
+      "commit": "0bd5091046708e64bc882e8349877cfbae713f6a1e2d0487a5f10af820a2d792",
+      "version": ""
+    },
+    {
+      "ref": "runtime/org.gnome.Platform/x86_64/51",
+      "origin": "flathub",
+      "commit": "95a671a9704f98cf4ec4904f24a3ddafe546262eac89c56ac7c59e51feac3bf5",
+      "version": ""
+    },
+    {
+      "ref": "app/org.gnome.Snapshot/x86_64/stable",
+      "origin": "flathub",
+      "commit": "8a1a93d2335c92f28d54590f2fa1ee60390bbfca4d89a1bcefe3bc688aa75301",
+      "version": "51.0"
+    },
+    {
+      "ref": "app/org.gnome.SoundRecorder/x86_64/stable",
+      "origin": "flathub",
+      "commit": "3800cfb927ef666da099097d76df00945c1474051d533d9ff421ea0be74532ca",
+      "version": "42.0"
+    },
+    {
+      "ref": "app/org.gnome.meld/x86_64/stable",
+      "origin": "flathub",
+      "commit": "7449737ec00ed01bcd2c2db6940a5b2c5e6aca1dbe12aaf620b062d3d51a607b",
+      "version": "3.24.0"
+    },
+    {
+      "ref": "app/org.gnome.seahorse.Application/x86_64/stable",
+      "origin": "flathub",
+      "commit": "0890db4b0ae5f07ddd8933f91bff200cdcc0ade0a2c43eda1d2da49456b66610",
+      "version": "47.0"
+    },
+    {
+      "ref": "runtime/org.kde.Platform/x86_64/6.10",
+      "origin": "flathub",
+      "commit": "31742ff0f905913c512ea732960bbdeffa8306dcbebca45eeee62bfed0ca03a3",
+      "version": ""
+    },
+    {
+      "ref": "runtime/org.kde.Platform/x86_64/6.11",
+      "origin": "flathub",
+      "commit": "fe192771c0992ad873e6a9ccc6e4f087c76314ce5ced165650cc7ea045a6bbaa",
+      "version": ""
+    },
+    {
+      "ref": "app/org.libreoffice.LibreOffice/x86_64/stable",
+      "origin": "flathub",
+      "commit": "c3110993f45de72735bea42838653772abc561295e447333ff2025b0825e8837",
+      "version": "26.8.1.1"
+    },
+    {
+      "ref": "app/org.nickvision.tubeconverter/x86_64/stable",
+      "origin": "flathub",
+      "commit": "be83cfe9ea909c4fa80c0a86d62a880ad7b7783993c29e719d076f9ed68bdc30",
+      "version": "2026.5.0"
+    },
+    {
+      "ref": "app/org.nomacs.ImageLounge/x86_64/stable",
+      "origin": "flathub",
+      "commit": "b343340104f1ab512cee166f8222c5091ea31d4b20917c0fdd18612f5359af55",
+      "version": "3.23"
+    },
+    {
+      "ref": "app/org.pgadmin.pgadmin4/x86_64/stable",
+      "origin": "flathub",
+      "commit": "4670f662813d56ba9a0093080793c3e2c82f61e5085b04105a04791a7b0b9240",
+      "version": "9.18"
+    },
+    {
+      "ref": "app/org.qbittorrent.qBittorrent/x86_64/stable",
+      "origin": "flathub",
+      "commit": "f1b9e33319575d3c5c24efb5f57b613744264b515a0019c2064291c723594b0e",
+      "version": "5.2.4"
+    },
+    {
+      "ref": "app/org.remmina.Remmina/x86_64/stable",
+      "origin": "flathub",
+      "commit": "d40938f656ca5f3699f63fb3a926d321d24e36c63edb97cca8a3d14108a5c65c",
+      "version": "1.4.43"
+    }
+  ],
+  "mise_installed": {
+    "go": [
+      "1.27.1"
+    ],
+    "java": [
+      "27.0.0"
+    ],
+    "node": [
+      "26.10.0"
+    ],
+    "python": [
+      "3.10.22",
+      "3.11.17"
+    ],
+    "rust": [
+      "1.99.0"
+    ]
+  },
+  "mise_pyenv_commit": "f9d17bfc06ccbda37edd84df99a4f50d8d7d2a4a",
+  "homebrew_cellar": {
+    "binutils": [
+      "2.47"
+    ],
+    "gcc": [
+      "16.2.0"
+    ],
+    "gmp": [
+      "6.3.0"
+    ],
+    "isl": [
+      "0.28"
+    ],
+    "libmpc": [
+      "1.4.1"
+    ],
+    "lz4": [
+      "1.10.0"
+    ],
+    "mpfr": [
+      "4.2.2"
+    ],
+    "xz": [
+      "5.8.4"
+    ],
+    "zlib-ng-compat": [
+      "2.3.3_1"
+    ],
+    "zstd": [
+      "1.5.7_1"
+    ]
+  },
+  "schema": 1,
+  "version": "0.2.0",
+  "algorithm": "sorted-path-type-content-and-modes-v1",
+  "recipe_sha256": "2c0174797a79f16b818f02c114978c5d439ca067f605640ef0536f0993ece9dc",
+  "gnome_extensions": [
+    {
+      "uuid": "appindicatorsupport@rgcjonas.gmail.com",
+      "version": 66,
+      "upstream": "https://github.com/ubuntu/gnome-shell-extension-appindicator"
+    },
+    {
+      "uuid": "arcmenu@arcmenu.com",
+      "version": 74,
+      "upstream": "https://gitlab.com/arcmenu/ArcMenu"
+    },
+    {
+      "uuid": "blur-my-shell@aunetx",
+      "version": 72,
+      "upstream": "https://github.com/aunetx/blur-my-shell"
+    },
+    {
+      "uuid": "color-picker@tuberry",
+      "version": 49,
+      "upstream": "https://github.com/tuberry/color-picker"
+    },
+    {
+      "uuid": "dash-to-panel@jderose9.github.com",
+      "version": 74,
+      "upstream": "https://github.com/home-sweet-gnome/dash-to-panel"
+    },
+    {
+      "uuid": "ding@rastersoft.com",
+      "version": 99,
+      "upstream": "https://gitlab.com/rastersoft/desktop-icons-ng"
+    },
+    {
+      "uuid": "drive-menu@gnome-shell-extensions.gcampax.github.com",
+      "version": 82,
+      "upstream": "https://gitlab.gnome.org/GNOME/gnome-shell-extensions"
+    },
+    {
+      "uuid": "fq@megh",
+      "version": 47,
+      "upstream": "https://github.com/meghprkh/force-quit/"
+    },
+    {
+      "uuid": "just-perfection-desktop@just-perfection",
+      "version": 37,
+      "upstream": "https://gitlab.gnome.org/jrahmatzadeh/just-perfection"
+    },
+    {
+      "uuid": "lockkeys@vaina.lt",
+      "version": 72,
+      "upstream": "https://github.com/kazysmaster/gnome-shell-extension-lockkeys"
+    },
+    {
+      "uuid": "smile-extension@mijorus.it",
+      "version": 13,
+      "upstream": "https://github.com/mijorus/smile-gnome-extension"
+    },
+    {
+      "uuid": "tiling-assistant@leleat-on-github",
+      "version": 55,
+      "upstream": "https://github.com/ubuntu/Tiling-Assistant"
+    },
+    {
+      "uuid": "window-on-top@yousafesaeed.github.io",
+      "version": 9,
+      "upstream": "https://github.com/uosyph/window-on-top"
+    }
+  ],
+  "flatpak_dependencies": [
+    {
+      "ref": "runtime/com.mattjakeman.ExtensionManager.Locale/x86_64/stable",
+      "commit": "9e45ce9096c3efdcc54b26375fed9b730a6e8f5032daf6b8cee35482afacd036",
+      "origin": "flathub"
+    },
+    {
+      "ref": "runtime/com.raggesilver.BlackBox.Locale/x86_64/stable",
+      "commit": "bf4e997acf0f16be0d7953bbf66f5eca8780ace30d98179b2b084742478ff23b",
+      "origin": "flathub"
+    },
+    {
+      "ref": "runtime/io.github.Qalculate.Locale/x86_64/stable",
+      "commit": "27c542249427e85cd1ffe25a6a11da94002706e855433320d61cb921b82c3782",
+      "origin": "flathub"
+    },
+    {
+      "ref": "runtime/io.github.flattool.Warehouse.Locale/x86_64/stable",
+      "commit": "f9fceb211d4c8d3fdfb63fbc046223ddc419806de98609f928f4844da360cf8b",
+      "origin": "flathub"
+    },
+    {
+      "ref": "runtime/it.mijorus.gearlever.Locale/x86_64/stable",
+      "commit": "1a5600713ff17ea623a30a21bdcd0403819ac3bf236e65fc8a70e51afb874706",
+      "origin": "flathub"
+    },
+    {
+      "ref": "runtime/it.mijorus.smile.Locale/x86_64/stable",
+      "commit": "5230606259820d898e6fb5ea74e52c98754e4911107fbcd3dacb4cf6262b2c03",
+      "origin": "flathub"
+    },
+    {
+      "ref": "runtime/org.freedesktop.Platform.Locale/x86_64/25.08",
+      "commit": "56249bc390c2b19c7d77a241bba02118854f450db216b23cd84f5df5125ba5a0",
+      "origin": "flathub"
+    },
+    {
+      "ref": "runtime/org.gnome.Boxes.Locale/x86_64/stable",
+      "commit": "e399add5f3a15343bf4296f90d05676be861364a8214ed25cd9b2316df822281",
+      "origin": "flathub"
+    },
+    {
+      "ref": "runtime/org.gnome.Evince.Locale/x86_64/stable",
+      "commit": "bebd9850a0da7e9b949b0efb03c7b08bac782d0f5930cb85c8298f58984b0398",
+      "origin": "flathub"
+    },
+    {
+      "ref": "runtime/org.gnome.Platform.Locale/x86_64/49",
+      "commit": "40cf168b60431986722122a7daca7f959a1f14582f15c9e333fd806b6f0d190c",
+      "origin": "flathub"
+    },
+    {
+      "ref": "runtime/org.gnome.Platform.Locale/x86_64/50",
+      "commit": "6683351f7652737f6a58c17b4480e2ac92aa9f03ac8192f0c9bac713b53e097e",
+      "origin": "flathub"
+    },
+    {
+      "ref": "runtime/org.gnome.Platform.Locale/x86_64/51",
+      "commit": "1bba4d0c4db0f61ea19bc55a1a3aa2ea4efb3e89bc9b3483e3406cabbe0d49b2",
+      "origin": "flathub"
+    },
+    {
+      "ref": "runtime/org.gnome.Snapshot.Locale/x86_64/stable",
+      "commit": "9ab3941d4db085fac3010b4fe3d02efd0fe6d5209ad8984723a28b6d7cc523ec",
+      "origin": "flathub"
+    },
+    {
+      "ref": "runtime/org.gnome.SoundRecorder.Locale/x86_64/stable",
+      "commit": "2e63d070c8f9dacc5fd2944764e8150d36563b172491dfb8c765e6e30618240b",
+      "origin": "flathub"
+    },
+    {
+      "ref": "runtime/org.gnome.meld.Locale/x86_64/stable",
+      "commit": "078f8e8f896b3c8470c4b9ebfba44fae0617739fbb6b63c63a046d4d6b6960e9",
+      "origin": "flathub"
+    },
+    {
+      "ref": "runtime/org.gnome.seahorse.Application.Locale/x86_64/stable",
+      "commit": "cfe7ded9f2009e7ac09db7f1d05256bf71fba08d28c44b8834d98380ddd14728",
+      "origin": "flathub"
+    },
+    {
+      "ref": "runtime/org.kde.Platform.Locale/x86_64/6.10",
+      "commit": "3bd0cc910140f425909654ddca52412208e926d14b8b5249d50e4e00fdc0cca0",
+      "origin": "flathub"
+    },
+    {
+      "ref": "runtime/org.kde.Platform.Locale/x86_64/6.11",
+      "commit": "948deeb57c7bcb196dc35d9d4a4566fc7d75a7ee7dce49d279058e7257ed8f35",
+      "origin": "flathub"
+    },
+    {
+      "ref": "runtime/org.libreoffice.LibreOffice.Locale/x86_64/stable",
+      "commit": "bc6b8058e3ada9980665dd94dd92694c903dc9c1f46b94dc7a3ba917297bdbbd",
+      "origin": "flathub"
+    },
+    {
+      "ref": "runtime/org.remmina.Remmina.Locale/x86_64/stable",
+      "commit": "3f438edc91544096b3b851e6d10fac93557966edab0a83ea8812b0dc861c7203",
+      "origin": "flathub"
+    }
+  ]
+}
