@@ -1,3 +1,6 @@
+[tools]
+python = "3.13.11"
+
 [tasks.build]
 description = "Build Miubian using its locked inputs and native Debian live-build"
 run = "bash variants/miubian/build/build.sh"
@@ -16,4 +19,4 @@ run = "python3 variants/miubian/tests/vm/qa-install.py"
 
 [tasks.export-inputs]
 description = "Export verified cached Miubian inputs as an immutable bundle"
-run = "sudo -n python3 variants/miubian/build/export-inputs.py"
+run = 'sudo -n "$(command -v python3)" variants/miubian/build/export-inputs.py'

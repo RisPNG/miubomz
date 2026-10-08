@@ -98,19 +98,18 @@ def terminal():
 
 
 def ddc(*args):
-    result = subprocess.run(["/usr/bin/ddcutil", *args], text=True,
-                            capture_output=True, timeout=30,
-                            env={**os.environ, "LC_ALL": "C"})
-    if result.returncode:
-        raise RuntimeError((result.stderr or result.stdout).strip()[-600:])
-    return result.stdout
+    return subprocess.run(["/usr/bin/ddcutil", *args], text=True,
+                          capture_output=True, timeout=30,
+                          env={**os.environ, "LC_ALL": "C"})
 
 
 def brightness(percent):
     with locked("brightness"):
         report = ddc("detect", "--brief")
+        if report.returncode:
+            raise RuntimeError((report.stderr or report.stdout).strip()[-600:])
         displays = re.findall(r"^Display\s+(\d+)\s*\n(.*?)(?=^\S|\Z)",
-                              report, re.M | re.S)
+                              report.stdout, re.M | re.S)
         selectors = []
         for number, details in displays:
             bus = re.search(r"I2C bus:\s*/dev/i2c-(\d+)", details)
@@ -122,13 +121,41 @@ def brightness(percent):
 
         def adjust(selector):
             try:
-                value = ddc(*selector, "getvcp", "10", "--terse")
-                match = re.search(r"^VCP 10 C (\d+) (\d+)\s*$", value, re.M)
-                if not match or not 0 < int(match[2]) <= 65535:
-                    raise RuntimeError("Monitor did not report a valid brightness range.")
-                raw = (int(match[2]) * percent + 50) // 100
-                ddc(*selector, "setvcp", "10", str(raw), "--verify")
-                return None
+                controls = {"10": percent, "12": 75 if percent else 0,
+                            "16": percent, "18": percent, "1a": percent}
+                report = ddc(*selector, "getvcp", *controls)
+                failures = []
+                expected = {}
+                for code, target in controls.items():
+                    line = re.search(rf"^VCP code 0x{code}\s+\([^\n]*\):\s*(.*)$",
+                                     report.stdout + "\n" + report.stderr, re.M | re.I)
+                    if line and line[1].strip().startswith("Unsupported feature code"):
+                        continue
+                    match = re.fullmatch(r"current value\s*=\s*\d+,\s*max value\s*=\s*(\d+)",
+                                         line[1].strip()) if line else None
+                    if not match or not 0 < int(match[1]) <= 65535:
+                        detail = line[1] if line else report.stderr.strip() or "Could not read the control."
+                        failures.append(f"{code}: {detail}")
+                        continue
+                    raw = (int(match[1]) * target + 50) // 100
+                    try:
+                        result = ddc(*selector, "setvcp", code, str(raw), "--verify")
+                        if result.returncode:
+                            raise RuntimeError((result.stderr or result.stdout).strip()[-600:])
+                        expected[code] = raw
+                    except Exception as error:
+                        failures.append(f"{code}: {error}")
+                if expected:
+                    result = ddc(*selector, "getvcp", *expected, "--terse")
+                    for code, raw in expected.items():
+                        match = re.search(rf"^VCP {code} C (\d+) (\d+)\s*$",
+                                          result.stdout, re.M | re.I)
+                        if not match or int(match[1]) != raw:
+                            actual = match[1] if match else result.stderr.strip() or "unreadable"
+                            failures.append(f"{code}: requested {raw}, read back {actual}.")
+                elif not failures:
+                    failures.append("No supported brightness, contrast or RGB gain controls.")
+                return f"{' '.join(selector)}: {'; '.join(failures)}" if failures else None
             except Exception as error:
                 return f"{' '.join(selector)}: {error}"
 

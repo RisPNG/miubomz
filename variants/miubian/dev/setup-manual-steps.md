@@ -1,14 +1,12 @@
-# How Miubian is set up
+# How Miubian is set up manually
 
-Miubian uses Debian Testing, currently Forky, with GNOME. The installed system keeps Debian's identity and normal update path. This is the setup I settled on for the desktop, applications and installed system, and the specification I use when changing Miubian. The settings below describe Miubian 0.2.0, with the defaults kept in the project so a new installation can start from the same setup.
+Miubian uses Debian Testing, currently Forky, with GNOME. The installed system keeps Debian's identity and normal update path. This document records the setup I maintain on top of Debian Testing's live GNOME defaults. I update it when adding, changing or removing part of that setup, with the matching defaults kept in the project so a new installation can start from the same settings.
 
 I leave language, location, keyboard and account details up to the user. The desktop and application settings are defaults too, so they can be changed after installation. New accounts receive their application and shell configuration once, and later package updates preserve changes made by the user.
 
 The live desktop and installed system use the same desktop and application defaults. Account setup uses the installed user's home directory and ownership, with clean profiles and no personal history or credentials.
 
-The build commands are in [BUILD.md](../../../BUILD.md). The [package lists](../live-build/config/package-lists/), [software selection](../inputs/software.json) and [integration sources](../integration/) contain the actual setup described here.
-
-The accompanying [desired-packages.json](specifications/desired-packages.json) and [software-lock.json](specifications/software-lock.json) record the original Desired Results workstation. They preserve the package and software inventories that informed this setup. Current build selections and exact release locks are maintained under [inputs/](../inputs/).
+The basic workflow is in [README.md](README.md). The [package lists](../live-build/config/package-lists/), [software selection](../inputs/software.json) and [integration sources](../integration/) contain the actual setup described here. Exact release inputs are recorded in [the build locks](../inputs/locks/).
 
 ## Installation
 
@@ -88,6 +86,7 @@ For appearance and window behaviour, I use:
 
 - The Dark theme with theme scheduling disabled.
 - Native window decoration and simple scrollbars.
+- Hide the address bar.
 - A horizontal menu, with only the tab bar selected for auto-hide.
 - The panel on the right, with its toggle visible and floating panels enabled.
 - Auto-close for inactive panels disabled.
@@ -144,7 +143,7 @@ I leave the other settings at their defaults and make these changes:
 
 ### Dash to Panel
 
-I start with no pinned favourites and hide the Show Applications button. The panel uses a border-radius setting of `4`, no app-icon margin and the Ripple animation when hovering over app icons.
+I start with no pinned favourites. On the first monitor, I hide the Show Applications button; other monitors use Dash to Panel's default element layout. The panel uses a border-radius setting of `4`, no app-icon margin and the Ripple animation when hovering over app icons.
 
 Running indicators sit on the right. Focused applications use Segmented indicators, and unfocused applications use Dashes. Dominant icon colours are used for the indicators and focus highlight, with highlight opacity `15`.
 
@@ -218,7 +217,7 @@ The Flathub applications are:
 - Qalculate!.
 - pgAdmin 4.
 
-Their runtimes are supplied too, so installation doesn't need to download them. The selected applications and their exact references are kept in [the software selection](../inputs/software.json).
+The Miubian image supplies these applications and their runtimes, so installation doesn't need to download them. Recreating this setup on a stock Debian installation requires obtaining them first. The selected applications and their exact references are kept in [the software selection](../inputs/software.json).
 
 ### qView
 
@@ -307,15 +306,15 @@ I disable the help-browser shortcut and use Super+B to open the default browser.
 | Super+E | Add a Home tab at the right end of Nautilus, or open a window if needed |
 | Super+T | Open a new tab in the default terminal, or open a window if needed |
 | Super+. | Open Smile |
-| Super+- | Set detected DDC/CI monitors to their minimum brightness |
-| Super+= | Set detected DDC/CI monitors to their maximum brightness |
+| Super+- | Set supported DDC/CI brightness, contrast and RGB gains to zero |
+| Super+= | Restore supported brightness and RGB gains to 100%, and contrast to 75% |
 | Ctrl+Shift+Esc | Open GNOME System Monitor |
 
 The built-in Home-folder binding is disabled so Super+E uses the tab action. IBus keeps Super+; for its emoji picker, leaving Super+. for Smile. Super+= doesn't need Shift.
 
 With GNOME Console, the terminal action uses its most recently active window and the current tab's directory. The helper resolves the current default terminal; a different terminal needs to provide a New Tab action for the same behaviour.
 
-The brightness actions change brightness only, using each monitor's reported range. DDC/CI needs to be enabled and accessible on the monitor. Minimum brightness can still leave the display visible. Failures produce a desktop notification.
+The dimming action sets supported brightness, contrast and red, green and blue gain controls to zero. The restore action uses fixed values: 100% for brightness and RGB gains, and 75% for contrast. The helper uses each monitor's reported range, skips unsupported controls and reads the values back to check the result. DDC/CI needs to be enabled and accessible on the monitor. Zero values can still leave the display visible if the hardware cannot make it completely black. Failures produce a desktop notification.
 
 The bindings are in [the GNOME defaults](../integration/defaults/gnome/dconf/00-desktop), and the tab and brightness actions use [the shortcut helper](../integration/helpers/gnome-shortcut-helper).
 
