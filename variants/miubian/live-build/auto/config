@@ -40,7 +40,7 @@ lb config noauto \
     --win32-loader false \
     --checksums sha256 \
     --iso-application "Miubian Live $version" \
-    --iso-preparer Miubomz \
+    --iso-preparer "Ris Peng <hello@rispeng.com>" \
     --iso-publisher Miubomz \
     --iso-volume "$volume" \
     --chroot-squashfs-compression-type zstd \

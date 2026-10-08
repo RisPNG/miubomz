@@ -1,7 +1,7 @@
 Source: miubomz-settings
 Section: admin
 Priority: optional
-Maintainer: Miubomz <miubomz@localhost>
+Maintainer: Ris Peng <hello@rispeng.com>
 Build-Depends: debhelper-compat (= 13), dh-python, python3
 Standards-Version: 4.7.2
 Rules-Requires-Root: no

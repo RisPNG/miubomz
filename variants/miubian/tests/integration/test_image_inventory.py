@@ -89,13 +89,13 @@ class ImageInventoryTest(unittest.TestCase):
             status.write_text(
                 "Package: miubomz-defaults\nStatus: install ok installed\n"
                 "Architecture: all\nVersion: 0.2.0\n"
-                "Maintainer: Miubomz <miubomz@localhost>\nDescription: defaults\n\n"
+                "Maintainer: Ris Peng <hello@rispeng.com>\nDescription: defaults\n\n"
                 "Package: architecture-package\nStatus: install ok installed\n"
                 "Architecture: amd64\nVersion: 1:2.3-4\n"
-                "Maintainer: Miubomz <miubomz@localhost>\nDescription: architecture\n\n"
+                "Maintainer: Ris Peng <hello@rispeng.com>\nDescription: architecture\n\n"
                 "Package: removed-package\nStatus: deinstall ok config-files\n"
                 "Architecture: all\nVersion: 1.0\n"
-                "Maintainer: Miubomz <miubomz@localhost>\nDescription: removed\n")
+                "Maintainer: Ris Peng <hello@rispeng.com>\nDescription: removed\n")
             filesystem = work / "filesystem.squashfs"
             subprocess.run([
                 "mksquashfs", str(work / "source"), str(filesystem),

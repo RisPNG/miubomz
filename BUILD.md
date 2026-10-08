@@ -2,7 +2,7 @@
 
 Miubian is Miubomz's Debian Testing GNOME variant. The installed operating system remains Debian, and users can change the supplied defaults after installation. Version 0.2.0 uses Debian Forky, native Debian live-build and Calamares.
 
-The source expresses the desired experience, the Miubian implementation and its exact release inputs separately. The reference workstation records how the experience was established. Building does not require mounting that workstation or its VM.
+The [Miubian setup specification](variants/miubian/documentation/setup.md) defines the intended desktop, applications and installed system. Its accompanying inventories record the original Desired Results workstation. Native configuration implements the setup, and the input locks record exact release inputs. Building does not require mounting that workstation or its VM.
 
 ## Use the image
 
@@ -24,13 +24,12 @@ HOMEBREW_NO_AUTO_UPDATE=1 HOMEBREW_NO_INSTALL_FROM_API=1 brew list --versions
 
 | Path | Maintained responsibility |
 | --- | --- |
-| `policy/` | Desired desktop, application, development and system behavior, with rationale |
 | `variants/miubian/release.json` | Variant, version, architecture, Debian suite and artifact names |
 | `variants/miubian/live-build/` | Native `auto/` entry points, semantic package lists, archive configuration, preseeding and image hooks |
 | `variants/miubian/integration/` | Canonical defaults, runtime helpers, installer jobs, live adapter, recovery integration and their native Debian source package |
 | `variants/miubian/packages/calamares/` | Pinned upstream Calamares source checksums, one quilt patch and native build recipe |
 | `variants/miubian/inputs/` | Non-APT software selection and reviewed APT/software resolution locks |
-| `variants/miubian/reference/` | Historical setup and clean desired-results inventories used for provenance and parity |
+| `variants/miubian/documentation/` | Maintained setup specification, with the original Desired Results inventories under `specifications/` |
 | `variants/miubian/build/` | Debian builder environment, input preparation, native build, inventory and artifact export |
 | `variants/miubian/tests/` | Integration, assembled-image and disposable-VM verification |
 | `.build/miubian/` | Generated native build and VM state, including logs |
@@ -56,7 +55,7 @@ The first release's selected upstream bytes and native package archives are dist
 MIUBOMZ_INPUT_BUNDLE=/path/to/miubian-inputs-<sha256>.tar.zst mise run build
 ```
 
-No remote location is assumed for this locally exported bundle. An empty cache is reconstructed from it and checked against the tracked locks. Later builds recheck and reuse `.cache/miubian/software/` and `.cache/miubian/apt/`. Historical `reference/desired-results/` files are not build selection inputs. The software payload retains unmodified upstream assets; maintained product configuration comes from `integration/` and is excluded from the asset overlay.
+No remote location is assumed for this locally exported bundle. An empty cache is reconstructed from it and checked against the tracked locks. Later builds recheck and reuse `.cache/miubian/software/` and `.cache/miubian/apt/`. The inventories at `documentation/specifications/desired-packages.json` and `documentation/specifications/software-lock.json` preserve the original workstation capture; build selection and locks live under `live-build/` and `inputs/`. The software payload retains unmodified upstream assets; maintained product configuration comes from `integration/` and is excluded from the asset overlay.
 
 Preparation also seeds `.cache/miubian/bootstrap/` with independent copies of the verified package archives. Native debootstrap uses this mutable cache, checking each reused archive against the current official Debian index and downloading missing bootstrap versions there. It can replace its cached files without changing the reviewed archives under `apt/`. This cache speeds bootstrap and does not select or pin release packages; it is not included in the declared input bundle.
 

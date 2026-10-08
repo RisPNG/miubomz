@@ -1,5 +1,5 @@
 Description: Keep the legacy BIOS root boot flag off GPT Linux partitions
-Author: Miubomz
+Author: Ris Peng <hello@rispeng.com>
 Forwarded: no
 
 --- a/src/modules/partition/core/PartitionCoreModule.cpp

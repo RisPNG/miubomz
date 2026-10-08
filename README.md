@@ -6,18 +6,18 @@ Miubomz does not try to turn Debian into something that pretends to be its own d
 
 Unlike projects such as PikaOS, Linux Mint Debian Edition, AnduinOS, or Kali Linux, Miubomz does not replace Debian's identity with its own branding after installation. It does not add a custom boot splash, rewrite `/etc/os-release`, or introduce a separate package ecosystem just to make the system look more distinct.
 
-### Your Debian machine should stay Debian
+**Your Debian machine should stay Debian**
 A Miubomz installation is still a legitimate Debian installation. It uses Debian's official repositories, packages, infrastructure, and update path. This is a deliberate choice given that I am a single developer. I do not want to build custom repositories, packages, or infrastructure just for them to be unmaintained and leave users with a system that depends on a dead project.
 
-### Your machine should stay yours
+**Your machine should stay yours**
 Miubomz is simply an opinionated Debian. Miubomz should remain realistic about what it is capable of maintaining. The system should remain maintainable even if Miu ecosystem disappears, supported by the larger communities, repositories, packages, and development work of Debian and GNOME.
 
-## Miubian features
+### Miubian features
 
 - Debian Testing with GNOME, Debian's identity, and its normal package update path.
 - A familiar desktop with an application menu, taskbar, system tray, desktop icons, and Windows-style keyboard shortcuts.
 - Fluent themes, icons, and cursors, with a dark appearance configured by default.
-- Preinstalled browsers, office software, media players, image viewers, and everyday desktop utilities.
+- Preinstalled browsers (Firefox, Vivaldi, Epiphany), office software (LibreOffice), media playback (mpv), image viewers (qView and nomacs), and everyday desktop utilities.
 - Flatpak applications and their runtimes supplied for offline use, plus Gear Lever for managing AppImages.
 - Development tools including Visual Studio Code, mise, easyvenv, and supplied Python, Node.js, Java, Go, and Rust toolchains.
 - An enhanced Bash terminal with ble.sh, Starship, and command history synchronized between terminals.

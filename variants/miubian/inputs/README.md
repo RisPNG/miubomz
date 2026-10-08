@@ -4,7 +4,7 @@ The native `live-build/config/package-lists/` files select Debian packages by ro
 
 `software.json` selects the upstream software assets, Flatpak applications and runtimes, GNOME extensions, development toolchains and Homebrew payload. Its bundle field declares an immutable local archive with an exact SHA-256 and size. `locks/software.json` records exact Flatpak commits, including locale dependencies, and verifies the complete supplied software tree's content, paths and permission modes. Preparation checks native software inventories against the selections and locks, then stages only the declared asset paths. The package-owned Mise and Rustup configuration files and root's Midnight Commander tree are excluded; their maintained sources live in `integration/defaults/`.
 
-The files under `reference/desired-results/` describe the historical workstation. They do not select packages or provide build-time locks. Cached manifests and completion markers are likewise not authorities: each preparation verifies cached input bytes against the tracked locks.
+The [setup specification](../documentation/setup.md) describes the intended Miubian setup. Its accompanying [package inventory](../documentation/specifications/desired-packages.json) and [software inventory](../documentation/specifications/software-lock.json) record the original Desired Results workstation. The native package lists and files in this directory provide current build selection and locks. Cached manifests and completion markers are not authorities: each preparation verifies cached input bytes against the tracked locks.
 
 ## Building from an empty cache
 

@@ -35,7 +35,7 @@ calamares (3.4.2-1.1+miubomz1) forky; urgency=medium
 
   * Preserve Linux GPT partition types when installing from BIOS firmware.
 
- -- Miubomz <noreply@miubomz.invalid>  Mon, 05 Oct 2026 02:00:00 +0800
+ -- Ris Peng <hello@rispeng.com>  Mon, 05 Oct 2026 02:00:00 +0800
 
 CHANGELOG
 cat debian/changelog >> "$build_dir/changelog"

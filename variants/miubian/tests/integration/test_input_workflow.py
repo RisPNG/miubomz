@@ -115,7 +115,7 @@ class InputWorkflowTest(unittest.TestCase):
         (root / "DEBIAN").mkdir(parents=True)
         (root / "DEBIAN/control").write_text(
             f"Package: {name}\nVersion: {version}\nArchitecture: all\n"
-            "Maintainer: Miubomz <miubomz@localhost>\nDescription: native input workflow fixture\n")
+            "Maintainer: Ris Peng <hello@rispeng.com>\nDescription: native input workflow fixture\n")
         content = root / "usr/share" / name
         content.mkdir(parents=True)
         (content / "fixture.txt").write_text(f"{name} {version}\n")

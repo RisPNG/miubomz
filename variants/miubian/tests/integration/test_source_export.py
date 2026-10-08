@@ -27,7 +27,7 @@ class SourceExportTest(unittest.TestCase):
             (root / "debian/source/format").write_text("3.0 (native)\n")
             (root / "debian/control").write_text(
                 f"Source: {source}\nSection: misc\nPriority: optional\n"
-                "Maintainer: Miubomz <miubomz@localhost>\n"
+                "Maintainer: Ris Peng <hello@rispeng.com>\n"
                 "Build-Depends: debhelper-compat (= 13)\n"
                 "Standards-Version: 4.7.0\nRules-Requires-Root: no\n\n"
                 f"Package: {binary}\nArchitecture: all\n"
@@ -35,7 +35,7 @@ class SourceExportTest(unittest.TestCase):
             (root / "debian/changelog").write_text(
                 f"{source} ({version}) unstable; urgency=medium\n\n"
                 "  * Native source export regression fixture.\n\n"
-                " -- Miubomz <miubomz@localhost>  Wed, 07 Oct 2026 00:00:00 +0000\n")
+                " -- Ris Peng <hello@rispeng.com>  Wed, 07 Oct 2026 00:00:00 +0000\n")
             (root / "debian/rules").write_text("#!/usr/bin/make -f\n\n%:\n\tdh $@\n")
             (root / "debian/rules").chmod(0o755)
             (root / "fixture.txt").write_text(f"{source} {version}\n")
