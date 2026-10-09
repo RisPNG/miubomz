@@ -1,0 +1,120 @@
+name: Build Miubian ISO
+
+on:
+  push:
+    tags:
+      - '**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: miubomz-iso-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: [self-hosted, linux, x64, miubomz]
+    timeout-minutes: 1440
+    env:
+      MIUBOMZ_BUILDER_IMAGE: miubomz-ci:${{ github.sha }}
+      MIUBOMZ_BUILD_CONTAINER: miubomz-build-${{ github.run_id }}-${{ github.run_attempt }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Check out the tagged commit
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+
+      - name: Install the pinned host tools
+        uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4
+        with:
+          version: 2025.8.13
+
+      - name: Check the runner and locked input bundle
+        env:
+          MIUBOMZ_INPUTS_DIR: ${{ vars.MIUBOMZ_INPUTS_DIR }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          mise exec -- docker info >/dev/null
+          mise exec -- python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+          import shutil
+
+          if shutil.disk_usage('.').free < 100 * 1024 ** 3:
+              raise SystemExit('The ISO runner needs at least 100 GiB free disk space.')
+          bundle = json.loads(Path('variants/miubian/inputs/software.json').read_text())['bundle']
+          directory = Path(os.environ.get('MIUBOMZ_INPUTS_DIR') or Path.home() / 'miubomz-inputs')
+          path = (directory / Path(bundle['path']).name).resolve()
+          if not path.is_file() or path.stat().st_size != bundle['bytes']:
+              raise SystemExit(f'Copy the tagged commit\'s locked input bundle to {path}.')
+          with path.open('rb') as stream:
+              digest = hashlib.file_digest(stream, 'sha256').hexdigest()
+          if digest != bundle['sha256']:
+              raise SystemExit(f'The runner input bundle does not match its tracked checksum: {path}')
+          with open(os.environ['GITHUB_ENV'], 'a') as environment:
+              environment.write(f'MIUBOMZ_INPUT_BUNDLE={path}\n')
+          PY
+
+      - name: Check the integration behaviour
+        run: mise run test
+
+      - name: Build and validate the ISO
+        run: |
+          mise exec -- docker build --tag "$MIUBOMZ_BUILDER_IMAGE" variants/miubian/build
+          mise run build
+
+      - name: Prepare release downloads
+        run: |
+          mise exec -- python3 variants/miubian/build/prepare-release.py \
+            artifacts/miubian .build/miubian/github-release \
+            --repository "$GITHUB_REPOSITORY" --commit "$GITHUB_SHA" --tag "$GITHUB_REF_NAME"
+
+      - name: Publish the tagged release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          remote_commit=$(mise exec -- gh api --method GET "repos/$GITHUB_REPOSITORY/commits" \
+            -f "sha=refs/tags/$GITHUB_REF_NAME" -f per_page=1 --jq '.[0].sha')
+          test "$remote_commit" = "$GITHUB_SHA"
+          release_dir=.build/miubian/github-release
+          if mise exec -- gh release view "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            is_draft=$(mise exec -- gh release view "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft)
+            if [[ $is_draft != true ]]; then
+              printf '%s\n' 'This tag already has a published release. Create a new tag to publish another build.' >&2
+              exit 1
+            fi
+          else
+            mise exec -- gh release create "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" \
+              --verify-tag --target "$GITHUB_SHA" --title "Miubian $GITHUB_REF_NAME" \
+              --notes-file "$release_dir/NOTES.md" --draft
+          fi
+          mise exec -- gh release upload "$GITHUB_REF_NAME" "$release_dir/"* \
+            --repo "$GITHUB_REPOSITORY" --clobber
+          remote_commit=$(mise exec -- gh api --method GET "repos/$GITHUB_REPOSITORY/commits" \
+            -f "sha=refs/tags/$GITHUB_REF_NAME" -f per_page=1 --jq '.[0].sha')
+          test "$remote_commit" = "$GITHUB_SHA"
+          mise exec -- gh release edit "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" \
+            --target "$GITHUB_SHA" --notes-file "$release_dir/NOTES.md" --draft=false
+
+      - name: Remove the disposable build state
+        if: always()
+        run: |
+          if mise exec -- docker container inspect "$MIUBOMZ_BUILD_CONTAINER" >/dev/null 2>&1; then
+            mise exec -- docker container rm --force "$MIUBOMZ_BUILD_CONTAINER"
+          fi
+          if mise exec -- docker image inspect "$MIUBOMZ_BUILDER_IMAGE" >/dev/null 2>&1; then
+            mise exec -- docker run --rm \
+              --mount "type=bind,src=$GITHUB_WORKSPACE,dst=/work" \
+              "$MIUBOMZ_BUILDER_IMAGE" bash -eu -c \
+              'rm -rf -- /work/.build/miubian /work/.cache/miubian /work/artifacts/miubian'
+            mise exec -- docker image rm "$MIUBOMZ_BUILDER_IMAGE"
+          else
+            rm -rf -- .build/miubian .cache/miubian artifacts/miubian
+          fi

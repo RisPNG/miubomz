@@ -6,6 +6,7 @@ profile_dir=$project_dir/variants/miubian
 cd "$project_dir"
 
 builder_image=${MIUBOMZ_BUILDER_IMAGE:-$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["builder_image"])' "$profile_dir/release.json")}
+container_name=${MIUBOMZ_BUILD_CONTAINER:-miubomz-build-$$}
 mkdir -p .build/miubian/logs .cache/miubian artifacts/miubian
 
 docker_command=(docker)
@@ -18,7 +19,7 @@ if [[ -z ${MIUBOMZ_BUILDER_IMAGE:-} ]]; then
 fi
 
 run_options=(
-    --rm --privileged
+    --rm --privileged --name "$container_name"
     --memory "${MIUBOMZ_BUILD_MEMORY:-4g}"
     --cpus "${MIUBOMZ_BUILD_JOBS:-4}"
     --mount "type=bind,src=$project_dir,dst=/src,readonly"
@@ -41,5 +42,7 @@ if [[ -n ${MIUBOMZ_INPUT_BUNDLE:-} ]]; then
     run_options+=(--mount "type=bind,src=$input_bundle,dst=/input-bundle,readonly" --env MIUBOMZ_INPUT_BUNDLE=/input-bundle)
 fi
 
+trap '"${docker_command[@]}" container rm --force "$container_name" >/dev/null 2>&1 || true' EXIT
+trap 'exit 1' HUP INT TERM
 "${docker_command[@]}" run "${run_options[@]}" "$builder_image" \
     bash /src/variants/miubian/build/container-build.sh "$@" 2>&1 | tee .build/miubian/logs/build.log

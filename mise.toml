@@ -1,5 +1,6 @@
 [tools]
 python = "3.13.11"
+"aqua:cli/cli" = "2.102.0"
 
 [tasks.build]
 description = "Build Miubian using its locked inputs and native Debian live-build"

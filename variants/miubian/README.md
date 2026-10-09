@@ -12,7 +12,7 @@ Package lists describe what to include, while `inputs/locks/apt.json` records th
 
 ## inputs/
 
-`software.json` selects software assets, Flatpaks, GNOME extensions and supplied development toolchains. It also identifies the input bundle needed for an empty cache. `locks/software.json` records the verified payload, file permissions and resolved versions or commits. `locks/apt.json` records Debian and supplied package archives, including packages needed by the offline installer.
+`software.json` selects software assets, Flatpaks, GNOME extensions and supplied development toolchains. It also identifies the input bundle needed for an empty cache. `locks/software.json` records the verified payload, file permissions and resolved versions, or commits. `locks/apt.json` records Debian and supplied package archives, including packages needed by the offline installer.
 
 Keep selections, locks and the supplied bundle consistent. Changing software requires a reviewed replacement payload and lock; changing Debian package selection uses the APT resolution workflow. Cached inventories are generated records, so they should not replace these maintained inputs.
 
@@ -32,7 +32,7 @@ This is the `miubomz-settings` Debian source package. It builds the defaults, re
 | `vendor/` | Supplied upstream grub-btrfs files and Debian Calamares licensing. Retain licences and keep upstream files unchanged; product configuration belongs in the folders above. |
 | `debian/` | Package ownership, installed paths, dependencies, permissions and service lifecycle. Keep manifests in step with source moves and use Ris Peng `<hello@rispeng.com>` for maintainer details. |
 
-Generated Debian package files belong in the build directory. Keep account setup independent of a particular username, home directory or display. Initialise assets without repeatedly replacing the user's preferences.
+Generated Debian package files belong in the build directory. Keep account setup independent of a particular username, home directory, or display. Initialise assets without repeatedly replacing the user's preferences.
 
 ## packages/
 
@@ -45,6 +45,8 @@ When updating Calamares, verify the new official source checksums and whether th
 Maintain the Debian builder, input verification, native package and image build, and release export here. Keep generated state under `.build/miubian/`, cached inputs under `.cache/miubian/` and released output under `artifacts/miubian/` at the project root.
 
 Changes must keep lock verification, offline installer packages and source-package exports working together. The builder and bootstrap use Debian's network archive, so locked release inputs do not imply byte-identical ISO rebuilds.
+
+`prepare-release.py` packages the verified exports for GitHub. Keep its ISO parts below GitHub's per-file limit and retain the complete-image checksum, source archives and commit record.
 
 ## release.json
 
