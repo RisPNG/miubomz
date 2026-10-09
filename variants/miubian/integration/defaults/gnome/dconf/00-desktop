@@ -136,6 +136,7 @@ search-entry-border-radius=(true, 25)
 show-search-result-details=true
 
 [org/gnome/shell/extensions/blur-my-shell]
+hacks-level=1
 rounded-blur-found=false
 settings-version=2
 

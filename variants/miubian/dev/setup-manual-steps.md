@@ -177,7 +177,7 @@ I use dark mode with these theme settings:
 
 The supplied Fluent themes, icons and cursors come from the upstream [GTK theme](https://github.com/vinceliuice/Fluent-gtk-theme) and [icon theme](https://github.com/vinceliuice/Fluent-icon-theme). New accounts link their GTK 4 `gtk.css`, `gtk-dark.css` and `assets` to the matching dark theme under `/usr/share/themes/Fluent-round-Dark-compact/gtk-4.0/`, so the GTK 4 setup uses the same dark variant.
 
-Blur My Shell has application blur enabled globally, with actor opacity `255` and dynamic opacity disabled. The theme supplies the transparency while the text stays solid. The final exclusion list is:
+Blur My Shell has application blur enabled globally, with actor opacity `255` and dynamic opacity disabled. I keep artefact handling on Default (`hacks-level=1`) so the blur repaints without flashing when I hover over the title bar buttons. The theme supplies the transparency while the text stays solid. The final exclusion list is:
 
 ```text
 Plank
