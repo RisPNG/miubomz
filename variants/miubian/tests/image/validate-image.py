@@ -105,6 +105,12 @@ with tempfile.TemporaryDirectory(prefix="miubomz-media-check-", dir=root.parent)
             "/usr/lib/systemd/zram-generator.conf.d/50-miubomz.conf",
             "/usr/lib/miubomz/initialize-user",
             "/usr/share/miubomz/skel/.bashrc",
+            "/usr/lib/x86_64-linux-gnu/nautilus/extensions-4/libmiubomz-nautilus-tabs.so",
+            "/etc/xdg/miu/nautilus-tabs.conf",
+            "/etc/xdg/gnome-xdg-terminals.list",
+            "/etc/xdg/xdg-terminals.list",
+            "/etc/environment.d/10-miubomz-applications.conf",
+            "/etc/skel/.local/share/applications/org.gnome.Console.desktop",
         ),
         "miubomz-recovery": (
             "/etc/apt/apt.conf.d/80-miubomz-snapshots",

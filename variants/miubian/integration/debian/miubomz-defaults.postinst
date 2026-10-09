@@ -5,7 +5,10 @@ case "$1" in
     configure)
         dconf update
         update-desktop-database /usr/share/applications
-        update-alternatives --set x-terminal-emulator /usr/bin/kgx
+        update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/xdg-terminal-exec 40
+        update-alternatives --set x-terminal-emulator /usr/bin/xdg-terminal-exec
+        update-alternatives --set x-www-browser /usr/bin/vivaldi-stable
+        update-alternatives --set gnome-www-browser /usr/bin/vivaldi-stable
         update-alternatives --set editor /usr/bin/mcedit
         ;;
 esac

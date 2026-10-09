@@ -100,7 +100,7 @@ name='System Monitor'
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/desktop-terminal-tab]
 binding='<Super>t'
 command='/usr/lib/miubomz/gnome-shortcut-helper terminal'
-name='Default terminal — new tab'
+name='Console — new tab'
 
 [org/gnome/shell/extensions/appindicator]
 icon-brightness=0.0

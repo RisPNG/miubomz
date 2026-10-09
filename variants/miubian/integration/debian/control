@@ -2,17 +2,18 @@ Source: miubomz-settings
 Section: admin
 Priority: optional
 Maintainer: Ris Peng <hello@rispeng.com>
-Build-Depends: debhelper-compat (= 13), dh-python, python3
+Build-Depends: debhelper-compat (= 13), dh-python, python3, pkg-config,
+ libnautilus-extension-dev, libgtk-4-dev, libadwaita-1-dev
 Standards-Version: 4.7.2
 Rules-Requires-Root: no
 Homepage: https://github.com/RisPNG/miubomz
 
 Package: miubomz-defaults
-Architecture: all
-Depends: ${misc:Depends}, bash, dconf-cli, gnome-shell, gnome-console, nautilus,
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, bash, dconf-cli, gnome-shell, gnome-console, nautilus,
  python3, python3-gi, gir1.2-gtk-4.0, gir1.2-glib-2.0, xdg-terminal-exec,
  blackbox-terminal, mc, util-linux, zenity, wl-clipboard, xclip, ddcutil,
- desktop-file-utils, systemd-zram-generator, sudo, polkitd
+ desktop-file-utils, systemd-zram-generator, sudo, polkitd, vivaldi-stable
 Conflicts: miubomz-desktop, miubomz-software
 Breaks: miubomz-recovery (<< 0.2.0)
 Replaces: miubomz-desktop, miubomz-software, miubomz-recovery (<< 0.2.0)

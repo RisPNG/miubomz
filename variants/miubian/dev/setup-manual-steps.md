@@ -219,6 +219,12 @@ The Flathub applications are:
 
 The Miubian image supplies these applications and their runtimes, so installation doesn't need to download them. Recreating this setup on a stock Debian installation requires obtaining them first. The selected applications and their exact references are kept in [the software selection](../inputs/software.json).
 
+### Default applications
+
+Vivaldi handles browser and web-link requests, mpv handles video, qView handles images, and Evince handles PDFs. Audio and playlist defaults prefer Harmonoid when it is installed and use mpv otherwise. Installing Harmonoid's official Debian package manually or through MiuUtil's optional download activates that existing preference without applying another default-setting workflow. Removing Harmonoid returns audio to mpv. Its binary is not included in the ISO because its [current licence](https://github.com/harmonoid/harmonoid/blob/v0.3.32/LICENSE) does not grant redistribution.
+
+Account setup expands the audio, video and image defaults from the installed MIME database, including application-type aliases. Browser defaults also select Vivaldi for Debian's browser alternatives and set `BROWSER` for new sessions. The [application associations](../integration/defaults/applications/mimeapps.list) remain editable.
+
 ### qView
 
 I use qView's AppImage with Gear Lever, registered in the application menu. The AppImage lives in the user's `AppImages` directory, and the account setup adjusts its launcher and Gear Lever registration for the installed user's home directory.
@@ -252,9 +258,9 @@ Midnight Commander uses the `yadt256-defbg` skin for both the normal account and
 
 ## Terminal and development setup
 
-I use GNOME Console as the default terminal for the desktop, `x-terminal-emulator` and Nautilus's Open in Terminal action. Console has unlimited scrollback. `mcedit` is the default terminal editor.
+I use GNOME Console as the default terminal for the desktop, `x-terminal-emulator` and Nautilus's terminal actions. Default launches append a tab to Console's most recently active window, or open a window when needed. Both generic and GNOME terminal preferences select `org.gnome.Console.desktop:new-tab`. The desktop launcher uses `kgx --tab`, and `x-terminal-emulator` and `TERMINAL` use `xdg-terminal-exec` so command launches share that preference. Console has unlimited scrollback. `mcedit` is the default terminal editor.
 
-Black Box remembers its window size, hides the header bar, keeps the drag area and uses Noto Mono 12. Its working directory starts at home. The native Black Box package is used for Nautilus's command runner, and its Flatpak is also included.
+Black Box remembers its window size, hides the header bar, keeps the drag area and uses Noto Mono 12. Its working directory starts at home. Its native package and Flatpak are also included.
 
 ### Bash
 
@@ -284,13 +290,15 @@ The [Mise defaults](../integration/defaults/applications/mise/config.toml) and [
 
 ## Nautilus actions
 
+External folder launches and file reveals append tabs to the existing Nautilus window, or open a window when needed. This includes Vivaldi Downloads' Show in File Manager. The [Nautilus extension](../integration/helpers/nautilus-tabs.c) uses native navigation and selection to reveal requested files, folders and archives without opening them.
+
 I add these actions through Actions for Nautilus:
 
 | Action | Behaviour |
 | --- | --- |
 | Copy details | Copy names, paths or URIs, including multiple selected items |
-| Open in Terminal | Open Console in the selected folder or current folder |
-| Execute command here | Run an entered command in Black Box in that folder |
+| Open in Terminal | Append a Console tab in the selected folder or current folder |
+| Execute command here | Run an entered command in a Console tab in that folder |
 | Open in Code | Open the folder in Visual Studio Code |
 
 The three launch actions work with one local folder, including the folder background. Execute command here records the command in history, shows its exit status, then waits for one key before closing.
@@ -304,7 +312,7 @@ I disable the help-browser shortcut and use Super+B to open the default browser.
 | Shortcut | Result |
 | --- | --- |
 | Super+E | Add a Home tab at the right end of Nautilus, or open a window if needed |
-| Super+T | Open a new tab in the default terminal, or open a window if needed |
+| Super+T | Open a Console tab in the current tab's directory, or open a window if needed |
 | Super+. | Open Smile |
 | Super+- | Set supported DDC/CI brightness, contrast and RGB gains to zero |
 | Super+= | Restore supported brightness and RGB gains to 100%, and contrast to 75% |
@@ -312,7 +320,7 @@ I disable the help-browser shortcut and use Super+B to open the default browser.
 
 The built-in Home-folder binding is disabled so Super+E uses the tab action. IBus keeps Super+; for its emoji picker, leaving Super+. for Smile. Super+= doesn't need Shift.
 
-With GNOME Console, the terminal action uses its most recently active window and the current tab's directory. The helper resolves the current default terminal; a different terminal needs to provide a New Tab action for the same behaviour.
+The terminal shortcut activates Console's native New Tab action over D-Bus. Console uses its most recently active window and the current tab's directory, or opens a window when needed.
 
 The dimming action sets supported brightness, contrast and red, green and blue gain controls to zero. The restore action uses fixed values: 100% for brightness and RGB gains, and 75% for contrast. The helper uses each monitor's reported range, skips unsupported controls and reads the values back to check the result. DDC/CI needs to be enabled and accessible on the monitor. Zero values can still leave the display visible if the hardware cannot make it completely black. Failures produce a desktop notification.
 

@@ -8,6 +8,7 @@ RUN apt-get update \
         debootstrap debhelper desktop-file-utils dconf-cli dctrl-tools dh-python dosfstools dpkg-dev fakeroot file \
         flatpak fonts-dejavu-core git gpg grub-common grub-efi-amd64-bin grub-efi-amd64-signed \
         grub-efi-ia32-bin grub-pc-bin isolinux jq libglib2.0-bin librsvg2-bin live-build make mtools ostree \
+        pkg-config libnautilus-extension-dev libgtk-4-dev libadwaita-1-dev \
         python3 python3-gi python3-yaml rsync shim-signed squashfs-tools \
         syslinux syslinux-common syslinux-utils systemd-container wget \
         xorriso xz-utils zstd \

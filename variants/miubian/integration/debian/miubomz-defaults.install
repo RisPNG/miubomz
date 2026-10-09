@@ -2,6 +2,8 @@ defaults/gnome/dconf/00-desktop etc/dconf/db/miubomz.d
 defaults/gnome/profile/user etc/dconf/profile
 defaults/shell/.bashrc usr/share/miubomz/skel
 defaults/shell/*-terminals.list etc/skel/.config
+defaults/shell/*-terminals.list etc/xdg
+defaults/shell/10-miubomz-applications.conf etc/environment.d
 defaults/applications/git/.gitconfig etc/skel
 defaults/applications/mimeapps.list etc/skel/.config
 defaults/applications/firefox etc/skel/.mozilla
@@ -22,4 +24,10 @@ defaults/system/i2c/*.conf etc/modules-load.d
 defaults/system/zram/*.conf usr/lib/systemd/zram-generator.conf.d
 defaults/system/administrator/*.rules etc/polkit-1/rules.d
 defaults/system/administrator/99-miubomz-admin etc/sudoers.d
-helpers/* usr/lib/miubomz
+helpers/bashrc usr/lib/miubomz
+helpers/deduplicate-history.py usr/lib/miubomz
+helpers/gnome-shortcut-helper usr/lib/miubomz
+helpers/initialize-user usr/lib/miubomz
+helpers/nautilus-actions.py usr/lib/miubomz
+libmiubomz-nautilus-tabs.so usr/lib/${DEB_HOST_MULTIARCH}/nautilus/extensions-4
+defaults/applications/nautilus-tabs.conf etc/xdg/miu

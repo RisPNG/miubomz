@@ -6,7 +6,7 @@ Run these commands from the project root. The [variant overview](../README.md) e
 
 Building needs mise, access to Docker's daemon and at least 100 GiB of free disk space for the current software and VM checks. [mise.toml](../../../mise.toml) pins Python and the GitHub CLI used to publish releases; install them with `mise install` when needed. Debian image-building tools run inside the builder.
 
-The integration tests need native Debian utilities, including `debhelper`, `dpkg-dev`, `rsync`, `squashfs-tools` and `zstd`. Input export also uses Flatpak, Git and GNU tar, with noninteractive sudo to read builder-owned files. VM checks need QEMU, KVM access and OVMF for UEFI. These come from the host system.
+The integration tests need native Debian utilities, including `debhelper`, `dpkg-dev`, `rsync`, `squashfs-tools` and `zstd`. Building the native Nautilus extension also needs `pkg-config`, `libnautilus-extension-dev`, `libgtk-4-dev` and `libadwaita-1-dev`; the builder supplies these. Input export also uses Flatpak, Git and GNU tar, with noninteractive sudo to read builder-owned files. VM checks need QEMU, KVM access and OVMF for UEFI. These come from the host system.
 
 ## Building
 

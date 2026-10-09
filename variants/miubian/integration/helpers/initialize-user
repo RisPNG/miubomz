@@ -56,6 +56,43 @@ if gearlever.exists():
                 settings.remove_section(section)
     with gearlever.open("w") as stream:
         settings.write(stream)
+
+mimeapps = home / ".config/mimeapps.list"
+if mimeapps.exists():
+    from gi.repository import Gio
+
+    associations = configparser.ConfigParser(interpolation=None)
+    associations.optionxform = str
+    associations.read(mimeapps)
+    defaults = associations["Default Applications"]
+    for family, application in list(defaults.items()):
+        if not family.endswith("/*"):
+            continue
+        del defaults[family]
+        for content_type in sorted(Gio.content_types_get_registered()):
+            mime = Gio.content_type_get_mime_type(content_type)
+            media_type = mime.startswith(("audio/", "video/", "image/"))
+            if mime.startswith(family[:-1]) or (not media_type and Gio.content_type_is_a(content_type, family)):
+                defaults.setdefault(mime, application)
+    if not associations.has_section("Added Associations"):
+        associations.add_section("Added Associations")
+    for mime, applications in defaults.items():
+        selected = [application for application in applications.split(";") if application]
+        associated = selected + [application for application in associations["Added Associations"].get(mime, "").split(";")
+                                 if application and application not in selected]
+        associations["Added Associations"][mime] = ";".join(associated) + ";"
+        if associations.has_section("Removed Associations") and mime in associations["Removed Associations"]:
+            removed = [application for application in associations["Removed Associations"][mime].split(";")
+                       if application and application not in selected]
+            if removed:
+                associations["Removed Associations"][mime] = ";".join(removed) + ";"
+            else:
+                del associations["Removed Associations"][mime]
+    with mimeapps.open("w") as stream:
+        associations.write(stream)
+    if os.geteuid() == 0:
+        os.chown(mimeapps, account.pw_uid, account.pw_gid)
+
 subprocess.run(["update-desktop-database", str(home / ".local/share/applications")], check=True)
 
 environment = ["env", "HOME=" + str(home), "XDG_DATA_HOME=" + str(home / ".local/share"),

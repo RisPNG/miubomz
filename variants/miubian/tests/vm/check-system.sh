@@ -15,6 +15,11 @@ done
 test ! -e /usr/share/applications/chatgpt.desktop
 test -x /usr/lib/miubomz/initialize-user
 test -s /usr/share/miubomz/skel/.bashrc
+test -s /usr/lib/x86_64-linux-gnu/nautilus/extensions-4/libmiubomz-nautilus-tabs.so
+test -s /etc/xdg/miu/nautilus-tabs.conf
+test "$(readlink -f /usr/bin/x-terminal-emulator)" = /usr/bin/xdg-terminal-exec
+test "$(readlink /etc/alternatives/x-www-browser)" = /usr/bin/vivaldi-stable
+test "$(readlink /etc/alternatives/gnome-www-browser)" = /usr/bin/vivaldi-stable
 test "$(dpkg-query -S /etc/skel/.bashrc | cut -d: -f1)" = bash
 test "$(dpkg-query -S /usr/share/miubomz/skel/.bashrc | cut -d: -f1)" = miubomz-defaults
 test -z "$(dpkg-divert --list /etc/skel/.bashrc)"
@@ -38,6 +43,10 @@ test -n "$account_home"
 cmp -s /usr/share/miubomz/skel/.bashrc "$account_home/.bashrc"
 test -L "$account_home/.config/gtk-4.0/gtk.css"
 test -d "$account_home/.local/share/mise/shims"
+grep -qx 'org.gnome.Console.desktop:new-tab' "$account_home/.config/gnome-xdg-terminals.list"
+grep -qx 'org.gnome.Console.desktop:new-tab' "$account_home/.config/xdg-terminals.list"
+grep -qx 'Exec=/usr/bin/kgx --tab' "$account_home/.local/share/applications/org.gnome.Console.desktop"
+test -s "$account_home/.config/mimeapps.list"
 id -nG "$MIUBOMZ_QA_USERNAME" | tr ' ' '\n' | grep -qx i2c
 test "$(runuser -u "$MIUBOMZ_QA_USERNAME" -- gsettings get org.gnome.desktop.interface color-scheme)" = "'prefer-dark'"
 test "$(runuser -u "$MIUBOMZ_QA_USERNAME" -- gsettings get org.gnome.desktop.interface gtk-theme)" = "'Fluent-round-Dark-compact'"
