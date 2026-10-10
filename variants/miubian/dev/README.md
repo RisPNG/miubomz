@@ -59,8 +59,8 @@ Copy the bundle named in the tagged commit's `inputs/software.json` to `~/miubom
 Push a tag pointing at the intended commit. For example, replace `<commit-sha>` with the commit to release:
 
 ```sh
-git tag miubian-0.2.1 <commit-sha>
-git push origin miubian-0.2.1
+git tag miubian-0.2.2 <commit-sha>
+git push origin miubian-0.2.2
 ```
 
 The ISO exceeds GitHub's per-file release limit, so [prepare-release.py](../build/prepare-release.py) splits it into parts below 2 GiB. Download all release assets into one folder and run `bash join-iso.sh` to verify them and reconstruct the complete ISO. Each release also contains the package list, image and input reports, source and binary package archives, checksums and `release.json` with its tagged commit.

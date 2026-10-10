@@ -188,6 +188,8 @@ com.rastersoft.ding
 
 Both DING identifiers are included because the current desktop window uses `com.rastersoft.ding`. Excluding it keeps the desktop surface out of application blur, so the wallpaper isn't blurred just because desktop icons are enabled.
 
+Popup blur uses the static mode and the Default rounded pipeline. It blurs the desktop wallpaper rather than live windows behind the popup. This keeps the blur behind menus and notification banners inside their rounded corners without an additional blur library. These preferences take effect when the installed Blur My Shell version provides popup blur; the supplied version 72 does not blur these surfaces.
+
 These desktop choices are kept in [the GNOME defaults](../integration/defaults/gnome/dconf/00-desktop).
 
 ## Applications
@@ -247,7 +249,7 @@ watch-later-options-remove=sub-pos
 
 The window stays open after playback and can open without a file. Software rendering is allowed, which matters in a VM without a hardware GPU. ModernZ provides the controls instead of mpv's built-in controls and seek or volume bars. Resume files omit subtitle position so ModernZ's temporary adjustment above the controls isn't saved as the user's position.
 
-The [ModernZ preferences](../integration/defaults/applications/mpv/script-opts/modernz.conf) select the default layout, Fluent theme with mixed icons, medium seek bar and triangle chapter markers. thumbfast supplies thumbnail previews when hovering over the seek bar, using its upstream defaults; network streams and audio-only files do not generate previews.
+The [ModernZ preferences](../integration/defaults/applications/mpv/script-opts/modernz.conf) select the default layout, Fluent theme with mixed icons, medium seek bar and triangle chapter markers. Timestamps show milliseconds by default; right-clicking the timestamp toggles them. Audio and subtitle selector buttons appear when the file has corresponding tracks and the window has enough room. thumbfast supplies thumbnail previews when hovering over the seek bar, using its upstream defaults; network streams and audio-only files do not generate previews.
 
 The [mpv preferences](../integration/defaults/applications/mpv/mpv.conf) and ModernZ preferences belong to the defaults package. ModernZ's script and icon font and thumbfast's script are supplied as verified upstream assets in [the software selection](../inputs/software.json).
 

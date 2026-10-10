@@ -79,7 +79,7 @@ def start(iso, firmware, memory, inputs, installed):
     medium_arguments = [] if installed else ["-drive", f"media=cdrom,readonly=on,file={iso}"]
     command = [
         "qemu-system-x86_64", "-name", f"miubomz-offline-{firmware}-qa",
-        "-machine", "q35,accel=kvm", "-cpu", "host", "-m", f"{memory}G", "-smp", "4",
+        "-machine", "q35,accel=kvm,hpet=off", "-cpu", "host", "-m", f"{memory}G", "-smp", "4",
         *firmware_arguments,
         "-drive", f"if=virtio,format=qcow2,file={disk}",
         *medium_arguments,

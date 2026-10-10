@@ -51,6 +51,10 @@ id -nG "$MIUBOMZ_QA_USERNAME" | tr ' ' '\n' | grep -qx i2c
 test "$(runuser -u "$MIUBOMZ_QA_USERNAME" -- gsettings get org.gnome.desktop.interface color-scheme)" = "'prefer-dark'"
 test "$(runuser -u "$MIUBOMZ_QA_USERNAME" -- gsettings get org.gnome.desktop.interface gtk-theme)" = "'Fluent-round-Dark-compact'"
 
+hwclock --version
+test "$(dpkg-query -S "$(command -v hwclock)" | cut -d: -f1)" = util-linux-extra
+hwclock --show --utc
+
 case "$MIUBOMZ_QA_PHASE" in
     live)
         grep -qw boot=live /proc/cmdline
@@ -60,8 +64,6 @@ case "$MIUBOMZ_QA_PHASE" in
             test "$(dpkg-query -W -f='${Status}' "$package")" = 'install ok installed'
         done
         test -x /usr/bin/calamares
-        hwclock --version
-        test "$(dpkg-query -S "$(command -v hwclock)" | cut -d: -f1)" = util-linux-extra
         test -x /usr/lib/live/config/0950-miubomz-software
         test -s /usr/share/applications/calamares-install-miubomz.desktop
         test "$(systemctl show -p ActiveState --value miubomz-recovery-start.service)" = inactive

@@ -1,3 +1,10 @@
+miubomz-settings (0.2.2) unstable; urgency=medium
+
+  * Enable millisecond timestamps and native track selectors in ModernZ.
+  * Set rounded popup blur preferences for supported extension versions.
+
+ -- Ris Peng <hello@rispeng.com>  Sat, 10 Oct 2026 17:35:04 +0800
+
 miubomz-settings (0.2.1) unstable; urgency=medium
 
   * Replace uosc with ModernZ and thumbfast using the Fluent defaults.
