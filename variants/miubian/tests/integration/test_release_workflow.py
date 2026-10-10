@@ -11,7 +11,9 @@ import unittest
 
 sys.dont_write_bytecode = True
 VARIANT = Path(__file__).resolve().parents[2]
-ARTIFACT = json.loads((VARIANT / "release.json").read_text())["artifact"]
+RELEASE = json.loads((VARIANT / "release.json").read_text())
+ARTIFACT = RELEASE["artifact"]
+TAG = "miubian-" + RELEASE["version"]
 
 
 class ReleaseWorkflowTest(unittest.TestCase):
@@ -33,11 +35,11 @@ class ReleaseWorkflowTest(unittest.TestCase):
             directory.mkdir(parents=True)
             (directory / "fixture.txt").write_text(category + " export\n")
 
-    def prepare(self, part_bytes="7"):
+    def prepare(self, part_bytes="7", tag=TAG):
         return subprocess.run([
             sys.executable, str(VARIANT / "build/prepare-release.py"),
             str(self.artifacts), str(self.release), "--repository", "RisPNG/miubomz",
-            "--commit", "a" * 40, "--tag", "v0.2.0", "--part-bytes", part_bytes,
+            "--commit", "a" * 40, "--tag", tag, "--part-bytes", part_bytes,
         ], text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=30)
 
     def test_release_reassembles_verified_bytes_and_records_tagged_source(self):
@@ -45,7 +47,8 @@ class ReleaseWorkflowTest(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stdout)
         provenance = json.loads((self.release / "release.json").read_text())
         self.assertEqual(provenance["commit"], "a" * 40)
-        self.assertEqual(provenance["tag"], "v0.2.0")
+        self.assertEqual(provenance["tag"], TAG)
+        self.assertEqual(provenance["version"], RELEASE["version"])
         self.assertEqual(len(provenance["iso_parts"]), 4)
         for category in ("packages", "sources"):
             contents = subprocess.check_output([
@@ -88,6 +91,13 @@ class ReleaseWorkflowTest(unittest.TestCase):
         result = self.prepare(str(2 ** 31))
         self.assertNotEqual(result.returncode, 0, result.stdout)
         self.assertFalse(self.release.exists())
+
+    def test_tag_must_match_the_release_version_before_preparing_downloads(self):
+        for tag in ("v" + RELEASE["version"], TAG + "-other"):
+            with self.subTest(tag=tag):
+                result = self.prepare(tag=tag)
+                self.assertNotEqual(result.returncode, 0, result.stdout)
+                self.assertFalse(self.release.exists())
 
     def test_native_build_removes_its_container_on_success_and_failure(self):
         project = self.root / "project"

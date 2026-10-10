@@ -25,6 +25,8 @@ if not 0 < arguments.part_bytes < 2 ** 31:
     parser.error("Each release part must be smaller than 2 GiB.")
 
 release = json.loads((VARIANT / "release.json").read_text())
+if arguments.tag != f"miubian-{release['version']}":
+    parser.error(f"The tag must match the release version: miubian-{release['version']}")
 artifact = release["artifact"]
 source = arguments.artifacts.resolve()
 destination = arguments.destination.resolve()

@@ -39,7 +39,7 @@ The mutable bootstrap cache is separate from the locked package archives. Bootst
 
 ## Tagged builds
 
-[Build Miubian ISO](../../../.github/workflows/build-iso.yml) runs when a tag is pushed. It checks out that tag's exact commit, checks the integration behaviour, builds and validates the image, then publishes a GitHub release. The version and image name come from the tagged commit's `release.json`; tagging does not change them. The tagged commit must contain the workflow.
+[Build Miubian ISO](../../../.github/workflows/build-iso.yml) runs when a `miubian-<version>` tag is pushed. It checks out that tag's exact commit, checks the integration behaviour, builds and validates the image, then publishes a GitHub release titled `Miubian <version>`. The tag must match the version in the tagged commit's `release.json`, which also supplies the image name. Tagging does not change the version. The tagged commit must contain the workflow.
 
 The runner is a Debian 13 VM on the Windows build machine. Give the VM four CPUs, 8 GiB RAM and enough storage to leave at least 100 GiB free after installing its tools and copying the input bundle. Keep its files on the VM's Linux filesystem. The Windows machine and VM must stay running and online while accepting builds.
 
@@ -59,13 +59,15 @@ Copy the bundle named in the tagged commit's `inputs/software.json` to `~/miubom
 Push a tag pointing at the intended commit. For example, replace `<commit-sha>` with the commit to release:
 
 ```sh
-git tag v0.2.0 <commit-sha>
-git push origin v0.2.0
+git tag miubian-0.2.1 <commit-sha>
+git push origin miubian-0.2.1
 ```
 
 The ISO exceeds GitHub's per-file release limit, so [prepare-release.py](../build/prepare-release.py) splits it into parts below 2 GiB. Download all release assets into one folder and run `bash join-iso.sh` to verify them and reconstruct the complete ISO. Each release also contains the package list, image and input reports, source and binary package archives, checksums and `release.json` with its tagged commit.
 
 Releases remain drafts until all files upload successfully. A failed draft can be retried; a published release is preserved, so use a new tag for another build. CI stops its build container and removes its disposable build files, extracted cache and builder image afterwards. The supplied input bundles stay outside that cleanup. Docker retains shared base layers and build cache for later builds; maintain that cache on the dedicated VM as its available disk space changes. Automated image checks do not replace the boot, installation and recovery checks below.
+
+When publishing a locally verified image, cancel the new tag's automatic workflow run before creating its draft release. CI concurrency applies to workflow runs; it does not prevent a manual publisher from uploading to the same draft.
 
 ## Changing the setup
 

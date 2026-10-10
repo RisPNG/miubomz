@@ -1,8 +1,8 @@
 {
   "payload": {
-    "sha256": "a89af391f82d6e661ae6aa5f419553133a32426b5db7e9ac79bf2c766a37bc74",
-    "files": 441621,
-    "modes_sha256": "a4da631e4df1b9af0c1012b41390970eb9807e046c75d82ddd725c3b8e75ef23"
+    "sha256": "228c2982e5f982d002b3db3007e85669e24583d7d841de63bf34d37df510a484",
+    "files": 441581,
+    "modes_sha256": "84318a68ea0c3fb22974099182b27d841f484e26e2a0bb54f9d94fc4236e55ab"
   },
   "flatpaks": [
     {
@@ -246,7 +246,7 @@
   "schema": 1,
   "version": "0.2.0",
   "algorithm": "sorted-path-type-content-and-modes-v1",
-  "recipe_sha256": "2c0174797a79f16b818f02c114978c5d439ca067f605640ef0536f0993ece9dc",
+  "recipe_sha256": "9da1573423a4a046f3b07b5da511b8af79d3cce8547f0097fdccc8f32e958d24",
   "gnome_extensions": [
     {
       "uuid": "appindicatorsupport@rgcjonas.gmail.com",

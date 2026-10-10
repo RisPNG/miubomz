@@ -2,9 +2,9 @@
   "schema": 1,
   "architecture": "amd64",
   "bundle": {
-    "path": "artifacts/miubian/inputs/miubian-inputs-fbee40824a347c7c71e28d98c5514c31b5ec01a2fe3c3420aef5bfc882bf2ab5.tar.zst",
-    "sha256": "fbee40824a347c7c71e28d98c5514c31b5ec01a2fe3c3420aef5bfc882bf2ab5",
-    "bytes": 8056266473
+    "path": "artifacts/miubian/inputs/miubian-inputs-1a9226af426abff7184e0467b3a826ade99ee15b3cf26f9f14616e4201202332.tar.zst",
+    "sha256": "1a9226af426abff7184e0467b3a826ade99ee15b3cf26f9f14616e4201202332",
+    "bytes": 8047540297
   },
   "assets": [
     {
@@ -124,24 +124,85 @@
       }
     },
     {
-      "destination": "etc/skel/.config/mpv/scripts",
+      "destination": "etc/skel/.config/mpv/scripts/modernz.lua",
       "provenance": {
-        "kind": "archived-export",
-        "original_path": "home/miubomz/.config/mpv/scripts"
+        "kind": "upstream-file",
+        "repository": "https://github.com/Samillion/ModernZ",
+        "commit": "579897e8c974c380caa5017dc7b27a69123c1333",
+        "path": "modernz.lua",
+        "url": "https://raw.githubusercontent.com/Samillion/ModernZ/579897e8c974c380caa5017dc7b27a69123c1333/modernz.lua",
+        "sha256": "6f622f138931a0b3b019fd17fb7d85febf0d0b733948a814ab54ec1c40ed2268",
+        "bytes": 195721,
+        "license": "LGPL-2.1"
       }
     },
     {
-      "destination": "etc/skel/.config/mpv/fonts",
+      "destination": "etc/skel/.config/mpv/fonts/modernz-icons.ttf",
       "provenance": {
-        "kind": "archived-export",
-        "original_path": "home/miubomz/.config/mpv/fonts"
+        "kind": "upstream-file",
+        "repository": "https://github.com/Samillion/ModernZ",
+        "commit": "579897e8c974c380caa5017dc7b27a69123c1333",
+        "path": "modernz-icons.ttf",
+        "url": "https://raw.githubusercontent.com/Samillion/ModernZ/579897e8c974c380caa5017dc7b27a69123c1333/modernz-icons.ttf",
+        "sha256": "5033b84d569502538968c6f23b0859bda790eed85c10e419b0759537ec60a016",
+        "bytes": 51092,
+        "icon_licenses": [
+          "MIT",
+          "Apache-2.0"
+        ],
+        "credits_path": "README.md"
       }
     },
     {
-      "destination": "etc/skel/.config/mpv/script-opts",
+      "destination": "etc/skel/.config/mpv/scripts/thumbfast.lua",
       "provenance": {
-        "kind": "archived-export",
-        "original_path": "home/miubomz/.config/mpv/script-opts"
+        "kind": "upstream-file",
+        "repository": "https://github.com/po5/thumbfast",
+        "commit": "0f711de3138c9bd6718209d819ac54022c23ded2",
+        "path": "thumbfast.lua",
+        "url": "https://raw.githubusercontent.com/po5/thumbfast/0f711de3138c9bd6718209d819ac54022c23ded2/thumbfast.lua",
+        "sha256": "a3d08e71eae8b892f6cd39f9593ea219768e709312d176bca883841b156448bf",
+        "bytes": 32495,
+        "license": "MPL-2.0"
+      }
+    },
+    {
+      "destination": "usr/share/doc/modernz/LICENSE",
+      "provenance": {
+        "kind": "upstream-file",
+        "repository": "https://github.com/Samillion/ModernZ",
+        "commit": "579897e8c974c380caa5017dc7b27a69123c1333",
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/Samillion/ModernZ/579897e8c974c380caa5017dc7b27a69123c1333/LICENSE",
+        "sha256": "20c17d8b8c48a600800dfd14f95d5cb9ff47066a9641ddeab48dc54aec96e331",
+        "bytes": 26526,
+        "license": "LGPL-2.1"
+      }
+    },
+    {
+      "destination": "usr/share/doc/modernz/README.md",
+      "provenance": {
+        "kind": "upstream-file",
+        "repository": "https://github.com/Samillion/ModernZ",
+        "commit": "579897e8c974c380caa5017dc7b27a69123c1333",
+        "path": "README.md",
+        "url": "https://raw.githubusercontent.com/Samillion/ModernZ/579897e8c974c380caa5017dc7b27a69123c1333/README.md",
+        "sha256": "5d3b3e610b8c53f53211585b4f314c4146f44bc92680b8cfcd1e5b50ce0d53a8",
+        "bytes": 16160,
+        "license": "LGPL-2.1"
+      }
+    },
+    {
+      "destination": "usr/share/doc/thumbfast/LICENSE",
+      "provenance": {
+        "kind": "upstream-file",
+        "repository": "https://github.com/po5/thumbfast",
+        "commit": "0f711de3138c9bd6718209d819ac54022c23ded2",
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/po5/thumbfast/0f711de3138c9bd6718209d819ac54022c23ded2/LICENSE",
+        "sha256": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04",
+        "bytes": 16726,
+        "license": "MPL-2.0"
       }
     },
     {

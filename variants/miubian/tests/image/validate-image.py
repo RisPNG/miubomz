@@ -111,6 +111,8 @@ with tempfile.TemporaryDirectory(prefix="miubomz-media-check-", dir=root.parent)
             "/etc/xdg/xdg-terminals.list",
             "/etc/environment.d/10-miubomz-applications.conf",
             "/etc/skel/.local/share/applications/org.gnome.Console.desktop",
+            "/etc/skel/.config/mpv/mpv.conf",
+            "/etc/skel/.config/mpv/script-opts/modernz.conf",
         ),
         "miubomz-recovery": (
             "/etc/apt/apt.conf.d/80-miubomz-snapshots",

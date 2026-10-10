@@ -231,9 +231,9 @@ I use qView's AppImage with Gear Lever, registered in the application menu. The 
 
 The image includes `libfuse2t64`, since this AppImage needs FUSE 2 compatibility. Gear Lever retains application detection, removal and foreground updates, with background updates disabled.
 
-### mpv and uosc
+### mpv, ModernZ and thumbfast
 
-I use mpv with uosc, with this configuration:
+I use mpv with [ModernZ](https://github.com/Samillion/ModernZ) and [thumbfast](https://github.com/po5/thumbfast), with this configuration:
 
 ```ini
 keep-open=always
@@ -242,11 +242,14 @@ force-window=yes
 gpu-sw=yes
 osc=no
 osd-bar=no
+watch-later-options-remove=sub-pos
 ```
 
-The window stays open after playback and can open without a file. Software rendering is allowed, which matters in a VM without a hardware GPU. uosc provides the controls instead of mpv's built-in controls and seek or volume bars.
+The window stays open after playback and can open without a file. Software rendering is allowed, which matters in a VM without a hardware GPU. ModernZ provides the controls instead of mpv's built-in controls and seek or volume bars. Resume files omit subtitle position so ModernZ's temporary adjustment above the controls isn't saved as the user's position.
 
-The [mpv preferences](../integration/defaults/applications/mpv/mpv.conf), uosc scripts, fonts and script options are supplied together.
+The [ModernZ preferences](../integration/defaults/applications/mpv/script-opts/modernz.conf) select the default layout, Fluent theme with mixed icons, medium seek bar and triangle chapter markers. thumbfast supplies thumbnail previews when hovering over the seek bar, using its upstream defaults; network streams and audio-only files do not generate previews.
+
+The [mpv preferences](../integration/defaults/applications/mpv/mpv.conf) and ModernZ preferences belong to the defaults package. ModernZ's script and icon font and thumbfast's script are supplied as verified upstream assets in [the software selection](../inputs/software.json).
 
 ### Text Editor and fonts
 

@@ -60,6 +60,8 @@ case "$MIUBOMZ_QA_PHASE" in
             test "$(dpkg-query -W -f='${Status}' "$package")" = 'install ok installed'
         done
         test -x /usr/bin/calamares
+        hwclock --version
+        test "$(dpkg-query -S "$(command -v hwclock)" | cut -d: -f1)" = util-linux-extra
         test -x /usr/lib/live/config/0950-miubomz-software
         test -s /usr/share/applications/calamares-install-miubomz.desktop
         test "$(systemctl show -p ActiveState --value miubomz-recovery-start.service)" = inactive

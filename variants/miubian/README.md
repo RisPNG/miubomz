@@ -46,7 +46,7 @@ Maintain the Debian builder, input verification, native package and image build,
 
 Changes must keep lock verification, offline installer packages and source-package exports working together. The builder and bootstrap use Debian's network archive, so locked release inputs do not imply byte-identical ISO rebuilds.
 
-`prepare-release.py` packages the verified exports for GitHub. Keep its ISO parts below GitHub's per-file limit and retain the complete-image checksum, source archives and commit record.
+`prepare-release.py` packages the verified exports for GitHub and requires a `miubian-<version>` tag matching `release.json`. Keep its ISO parts below GitHub's per-file limit and retain the complete-image checksum, source archives and commit record.
 
 ## release.json
 

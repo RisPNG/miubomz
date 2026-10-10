@@ -3,7 +3,7 @@ name: Build Miubian ISO
 on:
   push:
     tags:
-      - '**'
+      - 'miubian-*'
 
 permissions:
   contents: write
@@ -47,6 +47,10 @@ jobs:
           from pathlib import Path
           import shutil
 
+          release = json.loads(Path('variants/miubian/release.json').read_text())
+          expected_tag = f"miubian-{release['version']}"
+          if os.environ['GITHUB_REF_NAME'] != expected_tag:
+              raise SystemExit(f'The release tag must match release.json: {expected_tag}')
           if shutil.disk_usage('.').free < 100 * 1024 ** 3:
               raise SystemExit('The ISO runner needs at least 100 GiB free disk space.')
           bundle = json.loads(Path('variants/miubian/inputs/software.json').read_text())['bundle']
@@ -60,6 +64,7 @@ jobs:
               raise SystemExit(f'The runner input bundle does not match its tracked checksum: {path}')
           with open(os.environ['GITHUB_ENV'], 'a') as environment:
               environment.write(f'MIUBOMZ_INPUT_BUNDLE={path}\n')
+              environment.write(f"MIUBOMZ_RELEASE_VERSION={release['version']}\n")
           PY
 
       - name: Check the integration behaviour
@@ -92,7 +97,7 @@ jobs:
             fi
           else
             mise exec -- gh release create "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" \
-              --verify-tag --target "$GITHUB_SHA" --title "Miubian $GITHUB_REF_NAME" \
+              --verify-tag --target "$GITHUB_SHA" --title "Miubian $MIUBOMZ_RELEASE_VERSION" \
               --notes-file "$release_dir/NOTES.md" --draft
           fi
           mise exec -- gh release upload "$GITHUB_REF_NAME" "$release_dir/"* \
@@ -101,7 +106,8 @@ jobs:
             -f "sha=refs/tags/$GITHUB_REF_NAME" -f per_page=1 --jq '.[0].sha')
           test "$remote_commit" = "$GITHUB_SHA"
           mise exec -- gh release edit "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" \
-            --target "$GITHUB_SHA" --notes-file "$release_dir/NOTES.md" --draft=false
+            --target "$GITHUB_SHA" --title "Miubian $MIUBOMZ_RELEASE_VERSION" \
+            --notes-file "$release_dir/NOTES.md" --draft=false
 
       - name: Remove the disposable build state
         if: always()

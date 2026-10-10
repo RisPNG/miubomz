@@ -36,7 +36,7 @@ Architecture: all
 Depends: ${misc:Depends}, ${python3:Depends}, calamares (>= 3.4),
  miubomz-defaults (= ${binary:Version}), miubomz-recovery (= ${binary:Version}),
  sudo, x11-xserver-utils, grub-pc-bin, grub-efi-amd64-bin, grub2-common,
- efibootmgr, cryptsetup-initramfs, keyutils, os-prober
+ efibootmgr, cryptsetup-initramfs, keyutils, os-prober, util-linux-extra
 Provides: calamares-settings
 Conflicts: calamares-settings-debian
 Replaces: calamares-settings-debian

@@ -1,9 +1,9 @@
 {
   "variant": "miubian",
   "name": "Miubian",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "architecture": "amd64",
   "distribution": "forky",
-  "artifact": "miubomz-0.2.0-amd64",
-  "builder_image": "miubomz-builder:0.2.0"
+  "artifact": "miubomz-0.2.1-amd64",
+  "builder_image": "miubomz-builder:0.2.1"
 }

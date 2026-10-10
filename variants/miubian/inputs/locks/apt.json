@@ -21032,6 +21032,18 @@
       "provenance": "native-package-archive"
     },
     {
+      "name": "liblastlog2-2",
+      "version": "2.42.3-1",
+      "architecture": "amd64",
+      "sha256": "7d228812513b8775cb1191611ece9d602ab7e0e06221897a56681936941e77e2",
+      "bytes": 25008,
+      "filename": "apt/liblastlog2-2_2.42.3-1_amd64.deb",
+      "contexts": [
+        "live"
+      ],
+      "provenance": "native-package-archive"
+    },
+    {
       "name": "liblc3-1",
       "version": "1.1.3+dfsg-1+b2",
       "architecture": "amd64",
@@ -35102,6 +35114,18 @@
       "sha256": "bf5248da5fdead36debc7ef71a29b0fae8062fc15d3cc0ec11d3e535f84ad05d",
       "bytes": 1245812,
       "filename": "apt/util-linux_2.42.3-1_amd64.deb",
+      "contexts": [
+        "live"
+      ],
+      "provenance": "native-package-archive"
+    },
+    {
+      "name": "util-linux-extra",
+      "version": "2.42.3-1",
+      "architecture": "amd64",
+      "sha256": "e021bf2b029d7e12a8731cef7e62303608783f62ae90ac6c1663c657be4f68e3",
+      "bytes": 454420,
+      "filename": "apt/util-linux-extra_2.42.3-1_amd64.deb",
       "contexts": [
         "live"
       ],
