@@ -188,7 +188,7 @@ com.rastersoft.ding
 
 Both DING identifiers are included because the current desktop window uses `com.rastersoft.ding`. Excluding it keeps the desktop surface out of application blur, so the wallpaper isn't blurred just because desktop icons are enabled.
 
-Popup blur uses the static mode and the Default rounded pipeline. It blurs the desktop wallpaper rather than live windows behind the popup. This keeps the blur behind menus and notification banners inside their rounded corners without an additional blur library. These preferences take effect when the installed Blur My Shell version provides popup blur; the supplied version 72 does not blur these surfaces.
+I disable popup blur so ArcMenu, the calendar menu and notification banners use their normal theme backgrounds instead of a blurred copy of the wallpaper. Blur My Shell uses the same popup setting for shell menus, switchers and dialogs, so those are excluded too. Application blur and the other desktop blur settings stay enabled. This preference takes effect when the installed Blur My Shell version provides popup blur; the supplied version 72 does not blur these surfaces.
 
 These desktop choices are kept in [the GNOME defaults](../integration/defaults/gnome/dconf/00-desktop).
 
