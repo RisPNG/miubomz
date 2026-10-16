@@ -1,3 +1,9 @@
+miubomz-settings (0.2.4) unstable; urgency=medium
+
+  * Run Nautilus commands in Black Box with interactive Bash.
+
+ -- Ris Peng <hello@rispeng.com>  Fri, 16 Oct 2026 10:20:00 +0800
+
 miubomz-settings (0.2.3) unstable; urgency=medium
 
   * Disable Blur My Shell for shell menus and notification banners.

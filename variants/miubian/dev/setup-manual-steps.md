@@ -263,7 +263,7 @@ Midnight Commander uses the `yadt256-defbg` skin for both the normal account and
 
 ## Terminal and development setup
 
-I use GNOME Console as the default terminal for the desktop, `x-terminal-emulator` and Nautilus's terminal actions. Default launches append a tab to Console's most recently active window, or open a window when needed. Both generic and GNOME terminal preferences select `org.gnome.Console.desktop:new-tab`. The desktop launcher uses `kgx --tab`, and `x-terminal-emulator` and `TERMINAL` use `xdg-terminal-exec` so command launches share that preference. Console has unlimited scrollback. `mcedit` is the default terminal editor.
+I use GNOME Console as the default terminal for the desktop, `x-terminal-emulator` and Nautilus's Open in Terminal action. Default launches append a tab to Console's most recently active window, or open a window when needed. Both generic and GNOME terminal preferences select `org.gnome.Console.desktop:new-tab`. The desktop launcher uses `kgx --tab`, and `x-terminal-emulator` and `TERMINAL` use `xdg-terminal-exec` so command launches share that preference. Console has unlimited scrollback. `mcedit` is the default terminal editor.
 
 Black Box remembers its window size, hides the header bar, keeps the drag area and uses Noto Mono 12. Its working directory starts at home. Its native package and Flatpak are also included.
 
@@ -303,10 +303,10 @@ I add these actions through Actions for Nautilus:
 | --- | --- |
 | Copy details | Copy names, paths or URIs, including multiple selected items |
 | Open in Terminal | Append a Console tab in the selected folder or current folder |
-| Execute command here | Run an entered command in a Console tab in that folder |
+| Execute command here | Run an entered command in native Black Box in that folder |
 | Open in Code | Open the folder in Visual Studio Code |
 
-The three launch actions work with one local folder, including the folder background. Execute command here records the command in history, shows its exit status, then waits for one key before closing.
+The three launch actions work with one local folder, including the folder background. Execute command here uses interactive Bash with the account's aliases, functions and tool setup, skips fetch, records the command in history, shows its exit status, then waits for one key before closing.
 
 The [menu configuration](../integration/defaults/applications/actions-for-nautilus/config.json) calls [the Nautilus helper](../integration/helpers/nautilus-actions.py).
 
