@@ -255,13 +255,10 @@ class InputWorkflowTest(unittest.TestCase):
         self.assertEqual((config / "package-lists/00-platform.list.chroot").read_text(), "new-platform\n")
         local_packages = config.parent / "local-packages"
         local_archive = self.build_package("miubomz-local", "0.2.0", local_packages)
-        orchestration = (self.variant / "build/container-build.sh").read_text()
-        start = orchestration.index("cp /work/local-packages/*.deb ")
-        end = orchestration.index("\nCONFIGURE", start) + len("\nCONFIGURE")
-        configuration = orchestration[start:end].replace("/work/", str(config.parent) + "/")
-        environment = dict(self.environment, MIUBOMZ_RESOLVE_INPUTS="1", MIUBOMZ_PROFILE=str(self.variant))
+        environment = dict(self.environment, MIUBOMZ_RESOLVE_INPUTS="1")
         result = subprocess.run([
-            "bash", "-eu", "-c", configuration,
+            sys.executable, "-B", str(self.variant / "build/prepare-inputs.py"), str(config),
+            "--local-packages", str(local_packages),
         ], env=environment, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=30)
         self.assertEqual(result.returncode, 0, result.stdout)
         self.assertEqual({path.name for path in (config / "packages.chroot").glob("*.deb")},

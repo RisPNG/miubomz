@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """Prepare the declared, verified Miubian inputs for native live-build."""
 
+import argparse
 import hashlib
 import json
 import os
 from pathlib import Path
 import shutil
 import subprocess
-import sys
 import tempfile
 
 from image_inventory import input_bundle_identity, source_inputs, verify_cached_inputs, verify_software_selection
@@ -30,11 +30,14 @@ def configure_packages(config, local_packages=None):
     versions = {package["name"]: package["version"] for package in lock["packages"]
                 if not RESOLVE_INPUTS or package["name"] in exported}
     if local_packages is not None:
+        packages = config / "packages.chroot"
+        packages.mkdir(parents=True, exist_ok=True)
         for path in sorted(local_packages.glob("*.deb")):
             name, version = subprocess.check_output([
                 "dpkg-deb", "--show", "--showformat=${Package}\t${Version}", str(path),
             ], text=True).split("\t")
             versions[name] = version
+            shutil.copy2(path, packages / path.name)
         (config / "package-lists/local.list.chroot").write_text(
             "\n".join(sorted(subprocess.check_output([
                 "dpkg-deb", "--show", "--showformat=${Package}", str(path),
@@ -51,7 +54,15 @@ def configure_packages(config, local_packages=None):
 
 
 def main():
-    config = Path(sys.argv[1])
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("config", type=Path)
+    parser.add_argument("--local-packages", type=Path,
+                        help="stage source-built packages and update their native APT configuration")
+    arguments = parser.parse_args()
+    config = arguments.config
+    if arguments.local_packages is not None:
+        configure_packages(config, arguments.local_packages)
+        return
     recipe = json.loads((VARIANT / "inputs/software.json").read_text())
     software_lock = json.loads((VARIANT / "inputs/locks/software.json").read_text())
     apt_lock = json.loads((VARIANT / "inputs/locks/apt.json").read_text())

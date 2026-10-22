@@ -31,20 +31,7 @@ cp -a "$profile_dir/integration" /work/integration
 )
 cp /work/miubomz-*.deb /work/local-packages/
 "$profile_dir/packages/calamares/build.sh" /work/local-packages
-cp /work/local-packages/*.deb /work/config/packages.chroot/
-python3 - <<'CONFIGURE'
-import importlib.util
-import os
-import sys
-from pathlib import Path
-
-profile_dir = Path(os.environ["MIUBOMZ_PROFILE"])
-sys.path.insert(0, str(profile_dir / "build"))
-spec = importlib.util.spec_from_file_location("prepare_inputs", profile_dir / "build/prepare-inputs.py")
-module = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(module)
-module.configure_packages(Path("/work/config"), Path("/work/local-packages"))
-CONFIGURE
+python3 "$profile_dir/build/prepare-inputs.py" /work/config --local-packages /work/local-packages
 
 lb config "$@"
 lb build
